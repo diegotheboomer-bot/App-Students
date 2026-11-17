@@ -32,6 +32,8 @@
   --st-blue:#0b6bc4;--st-2:#0b0d12;--st-3:#e4e8ef;
   --rail:#0d1f33;--rail-line:#0d1f33;--rail-text:#c3cfdc;--rail-hover:rgba(255,255,255,.08);
 }}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .sc{--sc:var(--scl)}}
+:root[data-theme="light"] .sc{--sc:var(--scl)}
 :root[data-theme="light"]{
   color-scheme:light;--bg:#f4f6f8;--surface:#ffffff;--surface-2:#f1f3f6;--hover:#f0f3f7;--input:#ffffff;
   --line:#dde2e8;--line-2:#c7cdd4;--text:#1f2a35;--muted:#53606c;--faint:#717d89;
@@ -379,7 +381,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:15px}
 .pick-ic{width:48px;height:48px;border-radius:8px;display:grid;place-items:center;background:var(--blue-soft);color:var(--blue-text)}
 .pick-ic svg{width:24px;height:24px}
 .pick .go{margin-top:auto;padding-top:8px;display:flex;align-items:center;gap:6px;color:var(--blue-text);font-weight:700}
-.hero-sum{border-color:var(--blue);box-shadow:inset 0 0 0 1px var(--blue),inset 0 1px 0 var(--card-hi)}
+.hero-sum{border-color:var(--line-2)}
 .sum-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:var(--blue);color:#fff;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 .hs-big{font-size:28px;font-weight:700;letter-spacing:-.01em;margin-top:8px}
 .ginp{width:84px;min-height:40px;text-align:center;padding:0 8px;font-weight:700}
@@ -443,6 +445,7 @@ body.big .main,body.big .exam{zoom:1.12}
 .gcell .grade{min-width:40px;text-align:left}
 .split{display:flex;gap:2px;height:10px;border-radius:6px;overflow:hidden;background:var(--track)}
 .split i{min-width:3px;background:var(--bar);box-shadow:inset 0 1px 0 var(--bar-hi),inset 0 0 0 1px rgba(255,255,255,.08)}
+.split i.scb,.lsw.scb{background:var(--sc,var(--bar))}
 .split i.mute{background:var(--line-2)}
 .split i.soft{background:var(--blue-text);opacity:.55}
 .legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:13px;color:var(--muted)}
@@ -456,7 +459,23 @@ body.big .main,body.big .exam{zoom:1.12}
 @media (max-width:700px){.cards{grid-template-columns:minmax(0,1fr)}}
 .subj{display:flex;flex-direction:column;overflow:hidden;transition:border-color .15s,box-shadow .15s}
 .subj:hover{border-color:var(--line-2);box-shadow:var(--shadow)}
-.cc-band{border-radius:15px 15px 0 0;display:flex;flex-direction:column;justify-content:flex-end;min-height:76px;padding:14px 18px;color:#fff}
+.cc-band{position:relative;overflow:hidden;border-radius:15px 15px 0 0;display:flex;flex-direction:column;justify-content:flex-end;min-height:96px;padding:14px 18px;color:#fff}
+.cc-band>div{position:relative}
+.cc-pat{position:absolute;right:0;max-width:72%;top:0;height:100%;width:auto;color:#fff;opacity:.26;pointer-events:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.cc-pat text{fill:currentColor;stroke:none;font-family:var(--font);font-weight:700}
+.cc-pat .f{fill:currentColor;stroke:none}
+.sc{--sc:var(--scd)}
+.sdot{width:10px;height:10px;border-radius:50%;flex:none}
+.tcard{display:flex;flex-direction:column;gap:14px;transition:border-color .15s,box-shadow .15s}
+.tcard:hover{border-color:var(--line-2);box-shadow:var(--shadow)}
+.tc-h{display:flex;align-items:center;gap:14px}
+.tc-h .t{font-weight:700;font-size:17px}
+.tc-h .m{font-size:14px;color:var(--muted)}
+.tc-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--card-line);font-size:15px}
+.tc-row .grade{min-width:40px;text-align:right}
+.tp-h{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:24px}
+.tp-h h1{font-size:28px;font-weight:700}
+
 .cc-t{font-weight:700;font-size:18px;line-height:1.25}
 .cc-m{font-size:14px;opacity:.88;margin-top:2px}
 .subj-in{display:flex;flex-direction:column;gap:14px;padding:18px;flex:1}
@@ -1037,8 +1056,20 @@ function route() { const h = location.hash.replace(/^#\/?/, ''); const parts = h
 const confirmBox = (title, body, act, label, kind = 'primary', data = '') => openModal(`<h2>${title}</h2><p class="muted mt">${body}</p><div class="row end wrap mt-l"><button class="btn" data-act="close">Cancelar</button><button class="btn ${kind}" data-act="${act}" ${data} autofocus>${label}</button></div>`);
 
 /* ---------- Gráficos ---------- */
-const CC = ['#164a7f', '#1f63a8', '#0f5a7a', '#2c4c6e', '#1a3a5c', '#3a4f66'];
-const ccColor = k => CC[[...String(k)].reduce((a, ch) => (a * 31 + ch.charCodeAt(0)) >>> 0, 7) % CC.length];
+const SUBJ = {
+  mat: {d: '#163a7a', c: '#5b9bff', l: '#2563eb', pat: '<path d="M14 76H206M34 8V86" opacity=".7"/><path d="M48 14Q98 150 150 14"/><text x="158" y="44" font-size="30">π</text><text x="150" y="80" font-size="22">√x</text><text x="88" y="30" font-size="17">x²</text><text x="52" y="64" font-size="20">∑</text>'},
+  por: {d: '#5c3a0a', c: '#f2a93b', l: '#b45309', pat: '<text x="112" y="66" font-size="58">Aa</text><path d="M20 26H92M20 42H80M20 58H96M20 74H64"/><text x="178" y="30" font-size="24">«»</text>'},
+  bio: {d: '#0f4a2c', c: '#3fd17f', l: '#15803d', pat: '<path d="M120 10C150 30 150 60 120 84M150 10C120 30 120 60 150 84M124 24H146M120 47H150M124 70H146"/><path d="M182 22l14 8v16l-14 8-14-8V30zM182 54l14 8v16l-14 8-14-8V62z"/><path d="M40 30l12 7v14l-12 7-12-7V37z"/><circle cx="80" cy="62" r="9"/><circle class="f" cx="80" cy="62" r="3"/>'},
+  his: {d: '#5c2414', c: '#f08b6b', l: '#c2410c', pat: '<path d="M150 18H206M154 24H202M160 24V74M171 24V74M182 24V74M193 24V74M150 80H206M146 86H210"/><text x="40" y="58" font-size="30">XIV</text><path d="M110 16h22l-11 14zM110 44h22l-11-14" /><path d="M110 16h22M110 44h22"/>'},
+  ing: {d: '#3a2a70', c: '#b49cff', l: '#7c3aed', pat: '<path d="M118 14h80a10 10 0 0 1 10 10v26a10 10 0 0 1-10 10h-46l-14 14V60h-20a10 10 0 0 1-10-10V24a10 10 0 0 1 10-10z"/><text x="132" y="46" font-size="24">Hi!</text><text x="30" y="70" font-size="26">ABC</text>'},
+  fq: {d: '#0c4a46', c: '#33d1c1', l: '#0f766e', pat: '<ellipse cx="170" cy="46" rx="36" ry="12"/><ellipse cx="170" cy="46" rx="36" ry="12" transform="rotate(60 170 46)"/><ellipse cx="170" cy="46" rx="36" ry="12" transform="rotate(120 170 46)"/><circle class="f" cx="170" cy="46" r="4"/><text x="40" y="64" font-size="24">H₂O</text>'},
+  geo: {d: '#4a3412', c: '#e3b46c', l: '#a16207', pat: '<circle cx="172" cy="46" r="34"/><ellipse cx="172" cy="46" rx="14" ry="34"/><path d="M138 46H206M144 28H200M144 64H200"/><path d="M20 70c20-14 40 6 60-8s30-10 50 0M24 52c18-12 34 4 52-6s26-8 40 0"/>'},
+  gen: {d: '#24344d', c: '#8fb3e8', l: '#33507a', pat: '<circle cx="176" cy="30" r="16"/><path d="M120 80l22-38 22 38z"/><rect x="60" y="26" width="28" height="28" rx="3" transform="rotate(20 74 40)"/>'},
+};
+const subjKey = s => /matem/i.test(s) ? 'mat' : /portug/i.test(s) ? 'por' : /biolog|ci[eê]nc/i.test(s) ? 'bio' : /hist/i.test(s) ? 'his' : /ingl|engl/i.test(s) ? 'ing' : /f[ií]sic|qu[ií]m/i.test(s) ? 'fq' : /geogr/i.test(s) ? 'geo' : 'gen';
+const sTheme = s => SUBJ[subjKey(s)];
+const scVars = s => { const t = sTheme(s); return `--scd:${t.c};--scl:${t.l}`; };
+const ccBand = (subject, sub) => { const t = sTheme(subject); return `<div class="cc-band" style="background:${t.d}"><svg class="cc-pat" viewBox="0 0 220 90" aria-hidden="true">${t.pat}</svg><div class="cc-t">${esc(subject)}</div><div class="cc-m">${sub}</div></div>`; };
 const DEFW = {testes: 60, trabalhos: 30, outras: 10};
 const GROUPS = [['testes', 'Testes'], ['trabalhos', 'Trabalhos'], ['outras', 'Outras avaliações']];
 const wts = () => Object.assign({}, DEFW, S.school.weights || {});
@@ -1055,21 +1086,21 @@ const avIn = n => S.photos?.[n] ? `<img src="${S.photos[n]}" alt="">` : initials
 const cardCols = n => n % 3 === 0 ? 3 : 2;
 const avg = a => a.length ? a.reduce((x, y) => x + y, 0) / a.length : null;
 const passLine = () => S.school.scale === 'valores' ? 0.475 : 0.5;
-function donut(p, size = 96, stroke = 10) {
+function donut(p, size = 96, stroke = 10, col = 'var(--blue)') {
   const r = (size - stroke) / 2, c = 2 * Math.PI * r, h = size / 2, has = p != null, v = clamp(p || 0), g = has ? grade(v) : null;
-  const arc = has && v > 0 ? `<circle class="arc" cx="${h}" cy="${h}" r="${r}" fill="none" stroke="${g.pass ? 'var(--blue)' : 'var(--bad)'}" stroke-opacity=".85" stroke-width="${stroke}" stroke-linecap="round" stroke-dasharray="${c.toFixed(1)}" style="--c:${c.toFixed(1)};stroke-dashoffset:${(c * (1 - v)).toFixed(1)}" transform="rotate(-90 ${h} ${h})"/>` : '';
+  const arc = has && v > 0 ? `<circle class="arc" cx="${h}" cy="${h}" r="${r}" fill="none" stroke="${g.pass ? col : 'var(--bad)'}" stroke-opacity=".9" stroke-width="${stroke}" stroke-linecap="round" stroke-dasharray="${c.toFixed(1)}" style="--c:${c.toFixed(1)};stroke-dashoffset:${(c * (1 - v)).toFixed(1)}" transform="rotate(-90 ${h} ${h})"/>` : '';
   return `<div class="donut" style="width:${size}px;height:${size}px"${has ? ` data-tip="${esc(g.full)}"` : ''}><svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" aria-hidden="true"><circle cx="${h}" cy="${h}" r="${r}" fill="none" stroke="var(--track)" stroke-width="${stroke}"/>${arc}</svg><div class="donut-c"><b style="font-size:${Math.round(size * .25)}px">${has ? g.txt : '-'}</b></div></div>`;
 }
-function spark(ps, w = 170, h = 46) {
+function spark(ps, w = 170, h = 46, col = 'var(--blue)') {
   if (ps.length < 2) return '';
   const x = i => 6 + i * (w - 12) / (ps.length - 1), y = v => h - 6 - clamp(v) * (h - 12), L = ps.length - 1, ty = y(passLine()).toFixed(1);
   const d = ps.map((v, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)} ${y(v).toFixed(1)}`).join(' ');
-  return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="Evolução das notas"><line x1="0" x2="${w}" y1="${ty}" y2="${ty}" stroke="var(--line-2)" stroke-width="1"/><path d="${d}" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>${ps.map((v, i) => `<circle cx="${x(i).toFixed(1)}" cy="${y(v).toFixed(1)}" r="${i === L ? 4.5 : 3}" fill="${grade(v).pass ? 'var(--blue)' : 'var(--bad)'}" stroke="var(--bg)" stroke-width="2" data-tip="${esc(grade(v).full)}"/>`).join('')}</svg>`;
+  return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="Evolução das notas"><line x1="0" x2="${w}" y1="${ty}" y2="${ty}" stroke="var(--line-2)" stroke-width="1"/><path d="${d}" fill="none" stroke="${col}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>${ps.map((v, i) => `<circle cx="${x(i).toFixed(1)}" cy="${y(v).toFixed(1)}" r="${i === L ? 4.5 : 3}" fill="${grade(v).pass ? col : 'var(--bad)'}" stroke="var(--bg)" stroke-width="2" data-tip="${esc(grade(v).full)}"/>`).join('')}</svg>`;
 }
 function hbars(rows) {
-  return `<div class="hbars">${rows.map(r => { const has = r.p != null, g = has ? grade(r.p) : null; return `<div class="hb"${has ? ` data-tip="${esc(r.label)}: ${esc(g.full)}"` : ''}><div class="hb-l"><div class="t">${esc(r.label)}</div>${r.sub ? `<div class="m">${esc(r.sub)}</div>` : ''}</div><div class="hb-track">${has ? `<i class="${g.pass ? '' : 'neg'}" style="width:${Math.max(2, r.p * 100).toFixed(1)}%"></i>` : ''}</div><div class="hb-v">${has ? gradeCell(r.p) : '<span class="faint">-</span>'}</div></div>`; }).join('')}</div>`;
+  return `<div class="hbars">${rows.map(r => { const has = r.p != null, g = has ? grade(r.p) : null; return `<div class="hb"${has ? ` data-tip="${esc(r.label)}: ${esc(g.full)}"` : ''}><div class="hb-l"><div class="t">${esc(r.label)}</div>${r.sub ? `<div class="m">${esc(r.sub)}</div>` : ''}</div><div class="hb-track">${has ? `<i class="${g.pass ? '' : 'neg'}" style="width:${Math.max(2, r.p * 100).toFixed(1)}%${r.col && g.pass ? `;background:${r.col}` : ''}"></i>` : ''}</div><div class="hb-v">${has ? gradeCell(r.p) : '<span class="faint">-</span>'}</div></div>`; }).join('')}</div>`;
 }
-const mini = p => p == null ? '' : `<span class="mini"><i class="${grade(p).pass ? '' : 'neg'}" style="width:${Math.max(3, p * 100).toFixed(0)}%"></i></span>`;
+const mini = (p, col) => p == null ? '' : `<span class="mini"><i class="${grade(p).pass ? '' : 'neg'}" style="width:${Math.max(3, p * 100).toFixed(0)}%${col && grade(p).pass ? `;background:${col}` : ''}"></i></span>`;
 function split(segs, legend = true) {
   return `<div class="split">${segs.filter(x => x.n > 0).map(x => `<i class="${x.cls || ''}" style="flex:${x.n}" data-tip="${esc(x.label)}: ${x.n}"></i>`).join('')}</div>${legend ? `<div class="legend">${segs.map(x => `<span><i class="lsw ${x.cls || ''}"></i>${esc(x.label)} <b>${x.n}</b></span>`).join('')}</div>` : ''}`;
 }
@@ -1102,7 +1133,7 @@ function myAverages() {
   const items = myItems(), subj = myClasses().map(c => { const it = items.filter(i => i.classId === c.id); return {c, items: it, m: wmean(it)}; });
   return {items, subj, geral: avg(subj.filter(x => x.m != null).map(x => x.m))};
 }
-const kpiDonut = (k, p, sub = '') => `<div class="card kpi kpi-d">${donut(p, 78, 8)}<div><div class="k">${k}</div>${sub ? `<div class="s mt-s">${sub}</div>` : ''}</div></div>`;
+const kpiDonut = (k, p, sub = '', col) => `<div class="card kpi kpi-d">${donut(p, 78, 8, col)}<div><div class="k">${k}</div>${sub ? `<div class="s mt-s">${sub}</div>` : ''}</div></div>`;
 function distChart(ps) {
   const bk = buckets(), counts = bk.map(([, lo, hi]) => ps.filter(p => { const v = grade(p).v; return v >= lo && v < hi; }).length), mx = Math.max(1, ...counts);
   return `<div class="bars">${bk.map(([l, , , neg], i) => `<div class="bar" data-tip="${esc(l)}: ${counts[i]}"><b>${counts[i]}</b><i class="${neg ? 'neg' : ''}" style="height:${counts[i] / mx * 100}%"></i><span>${l}</span></div>`).join('')}</div>`;
@@ -1113,15 +1144,15 @@ function classStats(c) {
   const all = items.flatMap(it => c.students.map(sid => it.p(sid)).filter(x => x != null));
   const st = c.students.map(sid => wmean(items.map(it => ({kind: it.kind, p: it.p(sid)})))).filter(x => x != null);
   const tests = S.tests.filter(t => t.classId === c.id && tstate(t) === 'closed');
-  return {items, ts: items, perTest, all, avg: avg(st), pass: st.filter(p => grade(p).pass).length, neg: st.filter(p => !grade(p).pass).length, exits: tests.reduce((a, t) => a + doneSubs(t).filter(s => s.leftCount).length, 0)};
+  return {items, ts: items, perTest, all, st, avg: avg(st), pass: st.filter(p => grade(p).pass).length, neg: st.filter(p => !grade(p).pass).length, exits: tests.reduce((a, t) => a + doneSubs(t).filter(s => s.leftCount).length, 0)};
 }
 function classCard(c, href) {
   const m = classStats(c);
-  return `<a class="card subj" href="${href}">
-    <div class="cc-band" style="background:${ccColor(c.subject)}"><div class="cc-t">${esc(c.subject)}</div><div class="cc-m">${esc(c.name)} · ${esc(person(c.teacherId).name)}</div></div>
+  return `<a class="card subj sc" style="${scVars(c.subject)}" href="${href}">
+    ${ccBand(c.subject, `${esc(c.name)} · ${esc(person(c.teacherId).name)}`)}
     <div class="subj-in">${c.pending.length ? `<span class="badge warn" style="align-self:flex-start">${plural(c.pending.length, 'pedido', 'pedidos')} para entrar</span>` : ''}
-    <div class="subj-b">${donut(m.avg, 92, 9)}<div class="grow" style="min-width:0"><div class="lbl xs">Média de cada avaliação</div><div class="mt-s">${spark(m.perTest.map(x => x.m)) || '<span class="hint">Aparece a partir de 2 avaliações.</span>'}</div></div></div>
-    ${m.pass + m.neg ? `<div><div class="lbl xs" style="margin-bottom:6px">Alunos com positiva</div>${split([{n: m.pass, label: 'Positiva'}, {n: m.neg, cls: 'neg', label: 'Negativa'}])}</div>` : ''}
+    <div class="subj-b">${donut(m.avg, 92, 9, 'var(--sc)')}<div class="grow" style="min-width:0"><div class="lbl xs">Média de cada avaliação</div><div class="mt-s">${spark(m.perTest.map(x => x.m), 170, 46, 'var(--sc)') || '<span class="hint">Aparece a partir de 2 avaliações.</span>'}</div></div></div>
+    ${m.pass + m.neg ? `<div><div class="lbl xs" style="margin-bottom:6px">Alunos com positiva</div>${split([{n: m.pass, label: 'Positiva', cls: 'scb'}, {n: m.neg, cls: 'neg', label: 'Negativa'}])}</div>` : ''}
     <div class="subj-f"><span>${plural(c.students.length, 'aluno', 'alunos')}</span><span>${plural(m.items.length, 'avaliação', 'avaliações')}</span>${m.exits ? `<span class="bad-c">${plural(m.exits, 'vez fora do teste', 'vezes fora do teste')}</span>` : ''}</div>
   </div></a>`;
 }
@@ -1252,19 +1283,53 @@ function vEscola() {
   const cs = S.classes.map(c => ({c, s: classStats(c)})).filter(x => x.s.avg != null).sort((a, b) => b.s.avg - a.s.avg);
   const content = pageH('Visão geral', esc(S.school.name)) + `
     <div class="kpis n4">
-      ${kpiDonut('Média da escola', m, `${all.length} provas`)}
+      ${kpiDonut('Média da escola', m, `${all.length} provas`, 'var(--text)')}
       ${kpi('Provas com positiva', `${all.length ? Math.round(pos / all.length * 100) : 0}%`, split([{n: pos, label: 'Positiva'}, {n: all.length - pos, cls: 'neg', label: 'Negativa'}], false), `${pos} de ${all.length} provas`)}
       ${kpi('Alunos', students, '', `${S.classes.length} turmas · ${S.people.filter(p => p.role === 'teacher').length} professores`)}
       ${kpi('Testes realizados', closed.length, '', `${all.length} provas corrigidas`)}
     </div>
     ${open.length ? section('A decorrer agora', open.map(t => `<div class="lrow"><div class="grow"><div class="t">${esc(t.title)}</div><div class="m">${esc(tclass(t).name)} · ${esc(t.subject)} · ${esc(person(tclass(t).teacherId).name)}</div></div><span class="badge ok"><span class="live"></span><span data-cd="${t.id}">${fmtLeft(t.endsAt - Date.now())}</span></span></div>`).join('')) : ''}
+    <h2 class="h2s">Professores</h2>
+    <p class="hint" style="margin:-8px 0 14px">Média dos alunos de cada professor. Carrega num professor para ver as turmas.</p>
+    <div class="cards" style="--cols:${cardCols(teachers().length)}">${teachers().map(teacherCard).join('')}</div>
     <div class="grid-2 sec">
-      ${section('Média por turma', `<div class="pad">${hbars(cs.map(x => ({label: `${x.c.name} ${x.c.subject}`, sub: person(x.c.teacherId).name, p: x.s.avg})))}</div>`)}
+      ${section('Média por disciplina', `<div class="pad">${hbars(subjAvgs().map(x => ({label: x.s, sub: plural(x.n, 'turma', 'turmas'), p: x.m, col: sTheme(x.s).c})))}</div>`)}
       ${section('Distribuição das notas', `<div class="pad">${distChart(all)}</div>`, `<span class="xs faint">${all.length} provas</span>`)}
-    </div>
-    <h2 class="h2s">Turmas</h2>
-    <div class="cards" style="--cols:${cardCols(S.classes.length)}">${S.classes.map(c => classCard(c, '#escola-turma-' + c.id)).join('')}</div>`;
+    </div>`;
   return shell('escola', 'escola', content);
+}
+const teachers = () => S.people.filter(p => p.role === 'teacher');
+const tAvg = id => avg(S.classes.filter(c => c.teacherId === id).flatMap(c => classStats(c).st));
+function subjAvgs() {
+  const by = {}; S.classes.forEach(c => { (by[c.subject] = by[c.subject] || []).push(...classStats(c).st); });
+  return Object.entries(by).map(([sj, st]) => ({s: sj, m: avg(st), n: S.classes.filter(c => c.subject === sj).length})).filter(x => x.m != null).sort((a, b) => b.m - a.m);
+}
+function teacherCard(p) {
+  const cs = S.classes.filter(c => c.teacherId === p.id), subj = [...new Set(cs.map(c => c.subject))];
+  return `<a class="card pad tcard" href="#escola-professor-${p.id}">
+    <div class="tc-h"><span class="av">${avIn(p.name)}</span><div class="grow" style="min-width:0"><div class="t">${esc(p.name)}</div><div class="m">${esc(subj.join(' · ') || 'Sem turmas')}</div></div>${donut(tAvg(p.id), 64, 7, 'var(--text)')}</div>
+    <div>${cs.map(c => { const m = classStats(c).avg, t = sTheme(c.subject); return `<div class="tc-row"><span class="sdot" style="background:${t.c}"></span><span class="grow">${esc(c.name)} · ${esc(c.subject)}</span>${mini(m, t.c)}<span class="grade ${m != null && !grade(m).pass ? 'neg' : ''}">${m == null ? '<span class="faint">-</span>' : grade(m).txt}</span></div>`; }).join('')}</div>
+    <div class="subj-f"><span>${plural(cs.length, 'turma', 'turmas')}</span><span>${plural(cs.reduce((a, c) => a + c.students.length, 0), 'aluno', 'alunos')}</span></div>
+  </a>`;
+}
+function vEscolaProf(id) {
+  const p = S.people.find(x => x.id === id && x.role === 'teacher');
+  if (!p) return shell('escola', 'escola', '<div class="card empty">Professor não encontrado.</div>');
+  const cs = S.classes.filter(c => c.teacherId === id), st = cs.map(c => ({c, s: classStats(c)}));
+  const tests = S.tests.filter(t => cs.includes(tclass(t)) && tstate(t) === 'closed').length, all = st.flatMap(x => x.s.st), pos = all.filter(x => grade(x).pass).length;
+  const content = `<a class="crumb" href="#escola">${ic('back')}Visão geral</a>
+    <div class="tp-h"><span class="av xl">${avIn(p.name)}</span><div class="grow" style="min-width:0"><h1>${esc(p.name)}</h1><p class="muted">${esc([...new Set(cs.map(c => c.subject))].join(' · '))}</p></div><a class="btn" href="#escola-professores">${ic('users')}Todos os professores</a></div>
+    <div class="kpis n4">
+      ${kpiDonut('Média dos alunos', tAvg(id), plural(all.length, 'aluno com nota', 'alunos com nota'), 'var(--text)')}
+      ${kpi('Alunos com positiva', `${all.length ? Math.round(pos / all.length * 100) : 0}%`, split([{n: pos, label: 'Positiva'}, {n: all.length - pos, cls: 'neg', label: 'Negativa'}], false), `${pos} de ${all.length} alunos`)}
+      ${kpi('Turmas', cs.length, '', plural(cs.reduce((a, c) => a + c.students.length, 0), 'aluno', 'alunos'))}
+      ${kpi('Testes realizados', tests)}
+    </div>
+    ${section('Média por turma', st.some(x => x.s.avg != null) ? `<div class="pad">${hbars(st.filter(x => x.s.avg != null).sort((a, b) => b.s.avg - a.s.avg).map(x => ({label: `${x.c.name} · ${x.c.subject}`, sub: plural(x.c.students.length, 'aluno', 'alunos'), p: x.s.avg, col: sTheme(x.c.subject).c})))}</div>` : '<div class="empty">Ainda sem notas.</div>')}
+    <h2 class="h2s">Turmas</h2>
+    <p class="hint" style="margin:-8px 0 14px">Carrega numa turma para ver a pauta.</p>
+    <div class="cards" style="--cols:${cardCols(cs.length)}">${cs.map(c => classCard(c, '#escola-turma-' + c.id)).join('') || '<div class="card empty">Sem turmas.</div>'}</div>`;
+  return shell('escola', 'escola-professores', content);
 }
 function vEscolaProfs() {
   const content = pageH('Professores', 'Quem dá aulas na escola e o que tem aplicado.') + `
@@ -1275,7 +1340,7 @@ function vEscolaProfs() {
         const cs = S.classes.filter(c => c.teacherId === p.id);
         const ts = S.tests.filter(t => cs.includes(tclass(t)) && tstate(t) === 'closed');
         const ps = ts.flatMap(t => doneSubs(t).map(s => scoreSub(s, t).p));
-        return `<tr><td><div class="who"><span class="av sm">${avIn(p.name)}</span>${esc(p.name)}</div></td><td>${cs.map(c => `${esc(c.name)} ${esc(c.subject)}`).join('<br>')}</td><td class="num hide-m">${ts.length}</td><td class="num">${ps.length ? `<div class="gcell">${mini(avg(ps))}${gradeCell(avg(ps))}</div>` : '<span class="faint">-</span>'}</td></tr>`;
+        return `<tr class="click" data-act="nav" data-h="#escola-professor-${p.id}"><td><div class="who"><span class="av sm">${avIn(p.name)}</span>${esc(p.name)}</div></td><td>${cs.map(c => `<span class="row" style="gap:8px"><span class="sdot" style="background:${sTheme(c.subject).c}"></span>${esc(c.name)} ${esc(c.subject)}</span>`).join('')}</td><td class="num hide-m">${ts.length}</td><td class="num">${tAvg(p.id) != null ? `<div class="gcell">${mini(tAvg(p.id))}${gradeCell(tAvg(p.id))}</div>` : '<span class="faint">-</span>'}</td></tr>`;
       }).join('')}</tbody></table></div>`)}`;
   return shell('escola', 'escola-professores', content);
 }
@@ -1314,7 +1379,7 @@ function vPauta(id, role) {
     .sort((a, b) => person(a.sid).name.localeCompare(person(b.sid).name, 'pt'));
   const colAvg = ts.map((t, i) => { const v = rows.map(r => r.ps[i]).filter(x => x != null); return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null; });
   const all = rows.map(r => r.avg).filter(x => x != null);
-  const back = role === 'escola' ? ['#escola', 'Visão geral'] : ['#prof-turmas', 'Turmas'];
+  const back = role === 'escola' ? ['#escola-professor-' + c.teacherId, person(c.teacherId).name] : ['#prof-turmas', 'Turmas'];
   const cst = classStats(c);
   const content = `<a class="crumb" href="${back[0]}">${ic('back')}${back[1]}</a>` + pageH(`Pauta · ${esc(c.name)} ${esc(c.subject)}`, `${esc(person(c.teacherId).name)} · ${plural(c.students.length, 'aluno', 'alunos')} · ${SCALES[S.school.scale].name}<br><span class="xs">Média ponderada: ${critLine()}</span>`, `<button class="btn" data-act="copyPauta" data-id="${c.id}">${ic('copy')}Copiar para Excel</button>`) + (role === 'prof' ? turmaTabs(c, 'prof', 'pauta') : '') + `
     <div class="grid-2">
@@ -1364,7 +1429,7 @@ function vProfTurmas() {
         <div class="row wrap"><span class="badge" style="min-height:36px"><span class="code" style="font-size:15px">${fmtCode(c.code)}</span></span><button class="btn sm" data-act="copy" data-v="${fmtCode(c.code)}">${ic('copy')}Copiar</button><a class="btn sm" href="#prof-turma-${c.id}">${ic('chat')}Mural</a><a class="btn sm primary" href="#prof-turma-${c.id}-pauta">${ic('table')}Pauta</a></div></div>
       <div class="pad turma-b">${donut(m.avg, 96, 10)}
         <div class="grow" style="min-width:180px"><div class="lbl xs">Média por teste</div><div class="mt-s">${spark(m.perTest.map(x => x.m), 220, 50) || '<span class="hint">Aparece a partir de 2 testes.</span>'}</div></div>
-        <div class="grow" style="min-width:200px"><div class="lbl xs" style="margin-bottom:6px">Alunos com positiva</div>${m.pass + m.neg ? split([{n: m.pass, label: 'Positiva'}, {n: m.neg, cls: 'neg', label: 'Negativa'}]) : '<span class="hint">Sem notas ainda.</span>'}</div></div>
+        <div class="grow" style="min-width:200px"><div class="lbl xs" style="margin-bottom:6px">Alunos com positiva</div>${m.pass + m.neg ? split([{n: m.pass, label: 'Positiva', cls: 'scb'}, {n: m.neg, cls: 'neg', label: 'Negativa'}]) : '<span class="hint">Sem notas ainda.</span>'}</div></div>
       ${c.pending.map(sid => `<div class="lrow" style="border-top:1px solid var(--line)"><span class="av sm">${avIn(person(sid).name)}</span><div class="grow"><div class="t">${esc(person(sid).name)}</div><div class="m">Pediu para entrar</div></div><div class="acts"><button class="btn" data-act="reject" data-c="${c.id}" data-s="${sid}">Recusar</button><button class="btn ok" data-act="accept" data-c="${c.id}" data-s="${sid}">${ic('check')}Aceitar</button></div></div>`).join('')}
     </div>`; }).join('')}</div>`;
   return shell('prof', 'prof-turmas', content);
@@ -2198,7 +2263,7 @@ function vAluno() {
     ${unread ? `<a class="notice" style="margin-bottom:16px" href="#aluno-mensagens">${ic('chat')}<div><b>${plural(unread, 'mensagem nova', 'mensagens novas')}</b> dos teus professores. Carrega para ler.</div></a>` : ''}
     ${open.map(t => `<div class="card pad-l open-card"><div class="row wrap between"><div><span class="badge ok"><span class="live"></span>Aberto agora</span><h2 class="mt-s" style="font-size:22px">${esc(t.title)}</h2><div class="muted mt-s">${esc(t.subject)} · ${plural(t.questions.length, 'pergunta', 'perguntas')} · <b data-cd="${t.id}">${fmtLeft(t.endsAt - Date.now())}</b></div></div><a class="btn lg primary" href="#aluno-prova-${t.id}">${mySub(t.id) ? 'Continuar' : 'Começar'} ${ic('arrow')}</a></div></div>`).join('')}
     <div class="grid-2">
-      <a class="card pad-l hero-stats hero-sum" href="#aluno-notas">${donut(geral, 120, 12)}<div class="grow" style="min-width:0"><div class="sum-tag">Média geral</div><div class="hs-v">${geral == null ? 'Ainda sem notas' : grade(geral).full}</div><div class="hint mt-s">Média de todas as tuas disciplinas</div><div class="mt">${spark(items.map(x => x.p), 240, 50) || ''}</div></div></a>
+      <a class="card pad-l hero-stats hero-sum" href="#aluno-notas">${donut(geral, 120, 12, 'var(--text)')}<div class="grow" style="min-width:0"><div class="sum-tag">Média geral</div><div class="hs-v">${geral == null ? 'Ainda sem notas' : grade(geral).full}</div><div class="hint mt-s">Média de todas as tuas disciplinas</div><div class="mt">${spark(items.map(x => x.p), 240, 50) || ''}</div></div></a>
       <div>
         ${section('Trabalhos por entregar', pendA.length ? pendA.slice(0, 3).map(a => `<a class="lrow nrow" href="#aluno-trabalho-${a.id}"><div class="grow"><div class="t">${esc(a.title)}</div><div class="m">${esc(cls(a.classId).subject)}</div></div>${aStateBadge(a, asubOf(a.id, ME))}</a>`).join('') : '<div class="empty">Nada por entregar.</div>', pendA.length > 3 ? '<a class="btn sm" href="#aluno-trabalhos">Ver todos</a>' : '')}
         ${section('Próximos testes', next.length ? next.map(t => `<div class="lrow nrow"><div class="grow"><div class="t">${esc(t.title)}</div><div class="m">${esc(t.subject)} · ${fmtDate(t.date)} · ${t.duration} min</div></div><span class="badge">${ic('lock')}Fechado</span></div>`).join('') : '<div class="empty">Sem testes marcados.</div>')}
@@ -2222,9 +2287,9 @@ function vAlunoTurmas() {
 }
 function subjCard(x) {
   const c = x.c, nextT = S.tests.filter(t => t.classId === c.id && ['ready', 'open'].includes(tstate(t)) && mySub(t.id)?.status !== 'submitted').length + S.assignments.filter(a => a.classId === c.id && asubOf(a.id, ME)?.status !== 'submitted' && new Date(a.due) > Date.now()).length;
-  return `<a class="card subj" href="#aluno-disciplina-${c.id}">
-    <div class="cc-band" style="background:${ccColor(c.subject)}"><div class="cc-t">${esc(c.subject)}</div><div class="cc-m">${esc(c.name)} · ${esc(person(c.teacherId).name)}</div></div>
-    <div class="subj-in"><div class="subj-b">${donut(x.m, 92, 9)}<div class="grow" style="min-width:0"><div class="lbl xs">Média da disciplina</div><div class="mt-s">${spark(x.items.map(i => i.p)) || `<span class="hint">${x.items.length ? 'Evolução a partir da 2.ª nota.' : 'Ainda sem notas.'}</span>`}</div></div></div>
+  return `<a class="card subj sc" style="${scVars(c.subject)}" href="#aluno-disciplina-${c.id}">
+    ${ccBand(c.subject, `${esc(c.name)} · ${esc(person(c.teacherId).name)}`)}
+    <div class="subj-in"><div class="subj-b">${donut(x.m, 92, 9, 'var(--sc)')}<div class="grow" style="min-width:0"><div class="lbl xs">Média da disciplina</div><div class="mt-s">${spark(x.items.map(i => i.p), 170, 46, 'var(--sc)') || `<span class="hint">${x.items.length ? 'Evolução a partir da 2.ª nota.' : 'Ainda sem notas.'}</span>`}</div></div></div>
     <div class="subj-f"><span>${plural(x.items.length, 'avaliação', 'avaliações')}</span>${nextT ? `<span class="blue-c">${plural(nextT, 'por fazer', 'por fazer')}</span>` : ''}</div>
   </div></a>`;
 }
@@ -2232,7 +2297,7 @@ function vAlunoNotas() {
   const {items, subj, geral} = myAverages(), withM = subj.filter(x => x.m != null), pos = withM.filter(x => grade(x.m).pass).length;
   const sorted = subj.slice().sort((a, b) => a.c.subject.localeCompare(b.c.subject, 'pt'));
   const content = pageH('Notas', `${SCALES[S.school.scale].name} · só tu vês as tuas notas`) + `
-    <div class="card pad-l hero-stats hero-sum">${donut(geral, 136, 13)}<div class="grow" style="min-width:0">
+    <div class="card pad-l hero-stats hero-sum">${donut(geral, 136, 13, 'var(--text)')}<div class="grow" style="min-width:0">
       <div class="sum-tag">Média geral</div>
       <div class="hs-big">${geral == null ? 'Ainda sem notas' : grade(geral).full}</div>
       <p class="muted mt-s">É a média das tuas ${plural(withM.length, 'disciplina', 'disciplinas')} com nota. Cada disciplina conta por igual.</p>
@@ -2243,7 +2308,7 @@ function vAlunoNotas() {
     <h2 class="h2s">Média de cada disciplina</h2>
     <p class="hint" style="margin:-8px 0 14px">Inclui testes, trabalhos e outras avaliações. Carrega numa disciplina para ver tudo.</p>
     <div class="cards" style="--cols:${cardCols(sorted.length)}">${sorted.map(subjCard).join('') || '<div class="card empty">Ainda não estás em nenhuma turma.</div>'}</div>
-    ${withM.length > 1 ? section('Comparar disciplinas', `<div class="pad">${hbars(withM.slice().sort((a, b) => b.m - a.m).map(x => ({label: x.c.subject, sub: person(x.c.teacherId).name, p: x.m})))}</div>`) : ''}`;
+    ${withM.length > 1 ? section('Comparar disciplinas', `<div class="pad">${hbars(withM.slice().sort((a, b) => b.m - a.m).map(x => ({label: x.c.subject, sub: person(x.c.teacherId).name, p: x.m, col: sTheme(x.c.subject).c})))}</div>`) : ''}`;
   return shell('aluno', 'aluno-notas', content);
 }
 function vAlunoDisciplina(id) {
@@ -2261,7 +2326,7 @@ function vAlunoDisciplina(id) {
   S.manual.filter(mm => mm.classId === id && mm.released && mm.grades[ME] != null).forEach(mm => rows.push({title: mm.title, kind: mm.kind, date: mm.date, state: '<span class="badge ok">Final</span>', p: mm.grades[ME], href: ''}));
   rows.sort((a, b) => new Date(b.date) - new Date(a.date));
   const content = `<a class="crumb" href="#aluno-notas">${ic('back')}Notas</a>${turmaTabs(c, 'aluno', 'notas')}
-    <div class="card pad-l hero-stats">${donut(m, 140, 13)}<div class="grow" style="min-width:0"><h1 class="h1s">${esc(c.subject)}</h1><div class="muted">${esc(c.name)} · ${esc(person(c.teacherId).name)}</div>
+    <div class="card pad-l hero-stats sc" style="${scVars(c.subject)}">${donut(m, 140, 13, 'var(--sc)')}<div class="grow" style="min-width:0"><h1 class="h1s">${esc(c.subject)}</h1><div class="muted">${esc(c.name)} · ${esc(person(c.teacherId).name)}</div>
       <div class="hs-grid mt">
         <div><div class="lbl">Média da disciplina</div><div class="hs-v">${m == null ? '-' : gradeCell(m)}</div></div>
         <div><div class="lbl">Melhor</div><div class="hs-v">${best == null ? '-' : gradeCell(best)}</div></div>
@@ -2433,7 +2498,7 @@ function render() {
   let html;
   if (!a) html = vEntry();
   else if (a === 'sobre') html = vSobre();
-  else if (a === 'escola') html = !b ? vEscola() : b === 'professores' ? vEscolaProfs() : b === 'definicoes' ? vEscolaDef() : b === 'turma' ? vPauta(c, 'escola') : vEscola();
+  else if (a === 'escola') html = !b ? vEscola() : b === 'professores' ? vEscolaProfs() : b === 'definicoes' ? vEscolaDef() : b === 'professor' ? vEscolaProf(c) : b === 'turma' ? vPauta(c, 'escola') : vEscola();
   else if (a === 'prof') html = !b ? vProf() : b === 'turmas' ? vProfTurmas() : b === 'turma' ? (d === 'pauta' ? vPauta(c, 'prof') : vTurmaMural(c)) : b === 'testes' ? vProfTestes() : b === 'trabalhos' ? vProfTrabalhos() : b === 'trabalho' ? vProfTrabalho(c) : b === 'notas' ? vProfNotas() : b === 'nota' ? vProfNota(c) : b === 'mensagens' ? vChat('prof', c, d) : b === 'definicoes' ? vDefs('prof') : b === 'novo' ? vProfNovo(c) : b === 'editar' ? vEditor(c) : b === 'teste' ? vProfTeste(c) : vProf();
   else if (a === 'aluno') html = !b ? vAluno() : b === 'turmas' ? vAlunoTurmas() : b === 'notas' ? vAlunoNotas() : b === 'disciplina' ? (d === 'mural' ? vAlunoMural(c) : vAlunoDisciplina(c)) : b === 'trabalhos' ? vAlunoTrabalhos() : b === 'trabalho' ? vAlunoTrabalho(c) : b === 'mensagens' ? vChat('aluno', c) : b === 'definicoes' ? vDefs('aluno') : b === 'resultado' ? vResultado(c) : b === 'prova' ? vProvaIntro(c) : vAluno();
   lastSig = stateSig();
