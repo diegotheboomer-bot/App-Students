@@ -26,7 +26,9 @@ Demo de uma app em que os alunos fazem testes no telemóvel ou no computador, a 
 
 - **Trabalhos**: o professor define instruções, prazo e o que se entrega (ficheiro, fotografia, link). Os alunos juntam PDFs, Word, Excel, fotografias ou links; o professor vê cada entrega e dá nota e comentário.
 - **Nota sem teste**: para testes em papel, apresentações orais ou participação. O professor escreve a nota de cada aluno.
-- Testes, trabalhos e notas sem teste contam todos para a **média da disciplina**. A **média geral** é a média das disciplinas.
+- Testes, trabalhos e notas sem teste contam todos para a **média da disciplina**, com os **critérios de avaliação** que a Direção define (por omissão: testes 60%, trabalhos 30%, outras 10%). A **média geral** é a média das disciplinas.
+- **Corrigir uma a uma**: o professor percorre as entregas e os testes aluno a aluno, com setas para o anterior e o seguinte.
+- **Fotografia de perfil**: cada pessoa pode pôr uma fotografia em Definições; sem fotografia aparecem as iniciais.
 - **Mural da turma**: avisos do professor, trabalhos novos e testes marcados, com comentários de toda a turma. Cada trabalho tem também comentários da turma.
 - **Entregar trabalhos**: um botão «Adicionar trabalho» mostra as opções em bolhas (ficheiro, fotografia, link, mensagem).
 - **Mensagens**: conversa privada entre cada aluno e o professor de cada turma.

@@ -14,9 +14,10 @@
   --line:#262c34;--line-2:#363e48;--text:#eef1f5;--muted:#a9b2be;--faint:#808a97;
   --blue:#2f7ad6;--blue-h:#2867b5;--blue-text:#83b6f0;--blue-soft:#172a42;
   --ok:#2f7ad6;--ok-text:#83b6f0;--bad:#e5484d;--bad-text:#f47c80;--bad-soft:#3a1517;--warn:#6b7280;--warn-text:#a9b2be;
-  --chip:#1b2027;--track:#252b33;--bar:rgba(56,132,222,.88);--bar-neg:rgba(229,72,77,.88);--bar-hi:transparent;--ring:transparent;--card-hi:transparent;
-  --glass:#14181e;--glass-line:#262c34;--shadow:0 10px 30px rgba(0,0,0,.45);--scrim:rgba(0,0,0,.62);
-  --card:#14181e;--card-line:#262c34;--th:#181d24;
+  --chip:rgba(255,255,255,.06);--track:rgba(255,255,255,.08);--bar:rgba(56,132,222,.88);--bar-neg:rgba(229,72,77,.88);--bar-hi:transparent;--ring:transparent;--card-hi:transparent;
+  --glass:rgba(16,20,27,.58);--glass-line:rgba(255,255,255,.1);--glass-solid:rgba(20,24,31,.94);--glass-2:rgba(16,20,27,.8);--shadow:0 18px 40px -18px rgba(0,0,0,.7);--scrim:rgba(0,0,0,.62);
+  --card:rgba(255,255,255,.045);--card-line:rgba(255,255,255,.09);--card-hi:rgba(255,255,255,.07);--th:rgba(255,255,255,.03);--bg-a:rgba(47,122,214,.16);--bg-b:rgba(47,122,214,.08);
+  --st-blue:#2f7ad6;--st-2:#eef1f5;--st-3:#151a21;
   --rail:#08111d;--rail-line:#1a2533;--rail-text:#b4c0ce;--rail-hover:rgba(255,255,255,.07);
   --font:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
 }
@@ -25,9 +26,10 @@
   --line:#dde2e8;--line-2:#c7cdd4;--text:#1f2a35;--muted:#53606c;--faint:#717d89;
   --blue:#0b6bc4;--blue-h:#0957a0;--blue-text:#0a5ea9;--blue-soft:#e5f0fa;
   --ok:#0b6bc4;--ok-text:#0a5ea9;--bad:#d12f3f;--bad-text:#b3202f;--bad-soft:#fdecee;--warn:#6b7280;--warn-text:#53606c;
-  --chip:#f1f3f6;--track:#e5e9ee;--bar:rgba(11,107,196,.88);--bar-neg:rgba(209,47,63,.88);--bar-hi:transparent;--ring:transparent;--card-hi:transparent;
-  --glass:#ffffff;--glass-line:#dde2e8;--shadow:0 8px 24px rgba(31,42,53,.12);--scrim:rgba(15,23,32,.45);
-  --card:#ffffff;--card-line:#dde2e8;--th:#f6f8fa;
+  --chip:rgba(15,23,42,.045);--track:rgba(15,23,42,.07);--bar:rgba(11,107,196,.88);--bar-neg:rgba(209,47,63,.88);--bar-hi:transparent;--ring:transparent;--card-hi:transparent;
+  --glass:rgba(255,255,255,.66);--glass-line:rgba(15,23,42,.08);--glass-solid:rgba(255,255,255,.95);--glass-2:rgba(255,255,255,.82);--shadow:0 18px 40px -20px rgba(15,23,42,.3);--scrim:rgba(15,23,32,.45);
+  --card:rgba(255,255,255,.66);--card-line:rgba(15,23,42,.08);--card-hi:#fff;--th:rgba(15,23,42,.03);--bg-a:rgba(11,107,196,.10);--bg-b:rgba(11,107,196,.05);
+  --st-blue:#0b6bc4;--st-2:#0b0d12;--st-3:#e4e8ef;
   --rail:#0d1f33;--rail-line:#0d1f33;--rail-text:#c3cfdc;--rail-hover:rgba(255,255,255,.08);
 }}
 :root[data-theme="light"]{
@@ -35,9 +37,10 @@
   --line:#dde2e8;--line-2:#c7cdd4;--text:#1f2a35;--muted:#53606c;--faint:#717d89;
   --blue:#0b6bc4;--blue-h:#0957a0;--blue-text:#0a5ea9;--blue-soft:#e5f0fa;
   --ok:#0b6bc4;--ok-text:#0a5ea9;--bad:#d12f3f;--bad-text:#b3202f;--bad-soft:#fdecee;--warn:#6b7280;--warn-text:#53606c;
-  --chip:#f1f3f6;--track:#e5e9ee;--bar:rgba(11,107,196,.88);--bar-neg:rgba(209,47,63,.88);--bar-hi:transparent;--ring:transparent;--card-hi:transparent;
-  --glass:#ffffff;--glass-line:#dde2e8;--shadow:0 8px 24px rgba(31,42,53,.12);--scrim:rgba(15,23,32,.45);
-  --card:#ffffff;--card-line:#dde2e8;--th:#f6f8fa;
+  --chip:rgba(15,23,42,.045);--track:rgba(15,23,42,.07);--bar:rgba(11,107,196,.88);--bar-neg:rgba(209,47,63,.88);--bar-hi:transparent;--ring:transparent;--card-hi:transparent;
+  --glass:rgba(255,255,255,.66);--glass-line:rgba(15,23,42,.08);--glass-solid:rgba(255,255,255,.95);--glass-2:rgba(255,255,255,.82);--shadow:0 18px 40px -20px rgba(15,23,42,.3);--scrim:rgba(15,23,32,.45);
+  --card:rgba(255,255,255,.66);--card-line:rgba(15,23,42,.08);--card-hi:#fff;--th:rgba(15,23,42,.03);--bg-a:rgba(11,107,196,.10);--bg-b:rgba(11,107,196,.05);
+  --st-blue:#0b6bc4;--st-2:#0b0d12;--st-3:#e4e8ef;
   --rail:#0d1f33;--rail-line:#0d1f33;--rail-text:#c3cfdc;--rail-hover:rgba(255,255,255,.08);
 }
 *{box-sizing:border-box}
@@ -58,17 +61,18 @@ svg.i{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-widt
 .link{background:none;border:0;padding:0;color:var(--blue-text);font-weight:600;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 
 /* Surfaces */
-#bg{position:fixed;inset:0;z-index:-1;background:var(--bg)}
-.card{background:var(--card);border:1px solid var(--card-line);border-radius:8px;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+#bg{position:fixed;inset:0;z-index:-1;background:radial-gradient(900px 600px at 100% -10%,var(--bg-a),transparent 60%),radial-gradient(800px 600px at -10% 110%,var(--bg-b),transparent 60%),var(--bg)}
+.card{background:var(--card);border:1px solid var(--card-line);border-radius:16px;-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%);box-shadow:inset 0 1px 0 var(--card-hi),0 14px 34px -24px rgba(0,0,0,.5)}
 .pad{padding:20px}.pad-l{padding:28px}
-.glass{background:var(--glass);border:1px solid var(--glass-line);box-shadow:var(--shadow)}
+.glass{background:var(--glass);border:1px solid var(--glass-line);-webkit-backdrop-filter:blur(26px) saturate(180%);backdrop-filter:blur(26px) saturate(180%);box-shadow:inset 0 1px 0 var(--card-hi),var(--shadow)}
+.modal.glass{background:var(--glass-solid)}
 .card-h{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap;min-height:62px}
 .card-h>span.xs{white-space:nowrap;margin-left:auto}
-.card>.card-h:first-child{border-radius:8px 8px 0 0}
+.card>.card-h:first-child{border-radius:16px 16px 0 0}
 .card-h h2{font-size:17px;font-weight:700}
 
 /* Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border-radius:6px;border:1px solid var(--line-2);background:var(--surface-2);font-weight:600;font-size:15px;cursor:pointer;white-space:nowrap;transition:background .15s,border-color .15s;-webkit-tap-highlight-color:transparent}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border-radius:10px;border:1px solid var(--card-line);background:var(--chip);font-weight:600;font-size:15px;cursor:pointer;white-space:nowrap;transition:background .15s,border-color .15s;-webkit-tap-highlight-color:transparent}
 .btn:hover{background:var(--hover)}
 .btn:active{transform:translateY(1px)}
 .btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
@@ -78,7 +82,7 @@ svg.i{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-widt
 .btn.danger{color:var(--bad-text)}
 .btn.ghost{background:none;border-color:transparent}
 .btn.ghost:hover{background:var(--hover)}
-.btn.sm{min-height:36px;padding:0 13px;font-size:14px;border-radius:6px}
+.btn.sm{min-height:36px;padding:0 13px;font-size:14px;border-radius:9px}
 .btn.lg{min-height:54px;padding:0 24px;font-size:16px}
 .btn.block{width:100%}
 .btn.icon{width:44px;padding:0}.btn.sm.icon{width:36px}
@@ -86,7 +90,7 @@ svg.i{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-widt
 :focus-visible{outline:3px solid var(--blue-text);outline-offset:2px}
 
 /* Badges: solid fills */
-.badge{display:inline-flex;align-items:center;gap:7px;min-height:26px;padding:0 10px;border-radius:4px;font-size:13px;font-weight:600;background:var(--chip);border:1px solid var(--card-line);color:var(--text);white-space:nowrap}
+.badge{display:inline-flex;align-items:center;gap:7px;min-height:26px;padding:0 11px;border-radius:999px;font-size:13px;font-weight:600;background:var(--chip);border:1px solid var(--card-line);color:var(--text);white-space:nowrap}
 .badge.ok::before,.badge.bad::before,.badge.warn::before{content:"";width:7px;height:7px;border-radius:50%;flex:none;box-sizing:border-box}
 .badge.ok::before{background:var(--blue)}
 .badge.bad::before{background:var(--bad)}
@@ -104,7 +108,7 @@ svg.i{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-widt
 .field{display:flex;flex-direction:column;gap:7px;min-width:0}
 .field>span,.lbl{font-size:14px;font-weight:600;color:var(--muted)}
 .hint{font-size:13px;color:var(--faint)}
-.inp{width:100%;min-height:48px;padding:0 14px;border-radius:6px;border:1px solid var(--line-2);background:var(--input);outline:none;font-size:16px}
+.inp{width:100%;min-height:48px;padding:0 14px;border-radius:10px;border:1px solid var(--line-2);background:var(--input);outline:none;font-size:16px}
 textarea.inp{min-height:90px;padding:12px 14px;resize:vertical;line-height:1.5}
 .inp:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
 .inp[disabled]{color:var(--muted);background:var(--surface-2)}
@@ -132,20 +136,20 @@ select.inp{appearance:none;-webkit-appearance:none;padding-right:40px;background
 .radio-card input{margin-top:4px;accent-color:var(--blue);width:18px;height:18px}
 
 /* Shell */
-.shell{display:grid;grid-template-columns:88px minmax(0,1fr);min-height:100vh;background:linear-gradient(to right,var(--rail) 88px,transparent 88px)}
-@media (max-width:860px){.shell{background:none}}
-.side{position:sticky;top:0;height:100vh;padding:14px 0 10px;display:flex;flex-direction:column;align-items:stretch;gap:2px;background:var(--rail);border-right:1px solid var(--rail-line);overflow-y:auto}
-.side .logo{justify-content:center;padding:6px 0 16px;color:#fff}
+.shell{display:grid;grid-template-columns:96px minmax(0,1fr);min-height:100vh}
+.side{position:sticky;top:0;height:100vh;padding:14px 0 10px;display:flex;flex-direction:column;align-items:stretch;gap:4px;background:var(--glass);border-right:1px solid var(--glass-line);-webkit-backdrop-filter:blur(22px) saturate(170%);backdrop-filter:blur(22px) saturate(170%);overflow-y:auto}
+.side .logo{justify-content:center;padding:6px 0 16px;color:var(--text)}
 .side .wm{font-size:16px;letter-spacing:.14em;margin-right:-.14em}
-.side .nav-i{flex-direction:column;justify-content:center;gap:4px;min-height:66px;padding:8px 4px;border-radius:0;color:var(--rail-text);font-size:12px;font-weight:600;text-align:center;line-height:1.15}
+.side .nav-i{flex-direction:column;justify-content:center;gap:4px;min-height:64px;margin:0 8px;padding:8px 2px;border-radius:14px;color:var(--muted);font-size:12px;font-weight:600;text-align:center;line-height:1.15}
 .side .nav-i svg{width:24px;height:24px}
-.side .nav-i:hover{background:var(--rail-hover);color:#fff}
+.side .nav-i:hover{background:var(--hover);color:var(--text)}
 .side .nav-i.on{background:var(--blue);color:#fff}
 .side .nav-i.on svg{color:#fff}
-.side .nb{position:absolute;top:6px;right:14px;margin:0;min-width:18px;height:18px;padding:0 5px;font-size:11px;background:var(--bad)}
+.side .nb{position:absolute;top:6px;right:10px;margin:0;min-width:18px;height:18px;padding:0 5px;font-size:11px;background:var(--bad)}
 .dtop{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 24px;padding-bottom:14px;border-bottom:1px solid var(--line)}
 .dtop-s{display:flex;align-items:center;gap:8px;color:var(--muted);font-weight:600;font-size:15px;min-width:0}
 .dtop-s svg{width:18px;height:18px}
+.dtop-me:hover .av{box-shadow:0 0 0 2px var(--blue)}
 .dtop-me{display:flex;align-items:center;gap:10px;line-height:1.2;text-align:right;flex:none}
 .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;letter-spacing:-.01em}
 .logo-mark{width:34px;height:34px;border-radius:6px;display:grid;place-items:center;background:var(--blue);flex:none}
@@ -161,6 +165,12 @@ select.inp{appearance:none;-webkit-appearance:none;padding-right:40px;background
 .side-foot{margin-top:auto;display:flex;flex-direction:column;gap:2px}
 .me{display:flex;align-items:center;gap:10px;padding:10px;border-radius:8px;background:var(--chip);border:1px solid var(--card-line)}
 .av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:13px;background:var(--blue);color:#fff;flex:none}
+.av{overflow:hidden}
+.av img{width:100%;height:100%;object-fit:cover;display:block}
+.av.xl{width:84px;height:84px;font-size:26px}
+.mtop-me{display:grid;place-items:center;border-radius:50%}
+.mtop-me .av{width:40px;height:40px}
+.acct{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .av.sm{width:32px;height:32px;font-size:12px}
 .av.mute{background:var(--line-2);color:var(--muted)}
 .main{padding:18px 36px 120px;max-width:1240px;width:100%;margin:0 auto;min-width:0}
@@ -220,7 +230,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:15px}
 .tabs a.on svg{color:var(--blue-text)}
 .step-t{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;margin-bottom:16px}
 .step-n{width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:14px;flex:none}
-.notice{display:flex;gap:10px;align-items:flex-start;padding:14px 16px;border-radius:6px;font-size:14px;background:var(--chip);border:1px solid var(--card-line);color:var(--text)}
+.notice{display:flex;gap:10px;align-items:flex-start;padding:14px 16px;border-radius:12px;font-size:14px;background:var(--chip);border:1px solid var(--card-line);color:var(--text)}
 .notice svg{color:var(--blue-text);margin-top:1px}
 .notice.warn{background:var(--chip)}
 .notice.warn svg{color:var(--bad-text)}
@@ -266,7 +276,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:15px}
 .qdots button.done{background:var(--blue-soft);border-color:var(--blue);color:var(--text)}
 .qdots button.cur{background:var(--blue);border-color:var(--blue);color:#fff}
 .qtext{font-size:22px;font-weight:700;letter-spacing:-.015em;line-height:1.4;margin:10px 0 18px}
-.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:16px 18px;margin-top:10px;border-radius:8px;border:1px solid var(--card-line);background:var(--chip);cursor:pointer;font-size:17px;-webkit-tap-highlight-color:transparent}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:16px 18px;margin-top:10px;border-radius:12px;border:1px solid var(--card-line);background:var(--chip);cursor:pointer;font-size:17px;-webkit-tap-highlight-color:transparent}
 .opt:hover{background:var(--hover)}
 .opt .l{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;background:var(--surface-2);border:1px solid var(--line-2);flex:none}
 .opt.sel{border-color:var(--blue);background:var(--blue-soft);box-shadow:inset 0 0 0 1px var(--blue)}
@@ -370,7 +380,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:15px}
 .pick-ic svg{width:24px;height:24px}
 .pick .go{margin-top:auto;padding-top:8px;display:flex;align-items:center;gap:6px;color:var(--blue-text);font-weight:700}
 .hero-sum{border-color:var(--blue);box-shadow:inset 0 0 0 1px var(--blue),inset 0 1px 0 var(--card-hi)}
-.sum-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:4px;background:var(--blue);color:#fff;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.sum-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:var(--blue);color:#fff;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 .hs-big{font-size:28px;font-weight:700;letter-spacing:-.01em;margin-top:8px}
 .ginp{width:84px;min-height:40px;text-align:center;padding:0 8px;font-weight:700}
 .bad-inp{border-color:var(--bad)!important}
@@ -446,7 +456,7 @@ body.big .main,body.big .exam{zoom:1.12}
 @media (max-width:700px){.cards{grid-template-columns:minmax(0,1fr)}}
 .subj{display:flex;flex-direction:column;overflow:hidden;transition:border-color .15s,box-shadow .15s}
 .subj:hover{border-color:var(--line-2);box-shadow:var(--shadow)}
-.cc-band{display:flex;flex-direction:column;justify-content:flex-end;min-height:76px;padding:14px 18px;color:#fff}
+.cc-band{border-radius:15px 15px 0 0;display:flex;flex-direction:column;justify-content:flex-end;min-height:76px;padding:14px 18px;color:#fff}
 .cc-t{font-weight:700;font-size:18px;line-height:1.25}
 .cc-m{font-size:14px;opacity:.88;margin-top:2px}
 .subj-in{display:flex;flex-direction:column;gap:14px;padding:18px;flex:1}
@@ -475,38 +485,53 @@ body.big .main,body.big .exam{zoom:1.12}
 }
 @media (prefers-reduced-motion:reduce){.arc{animation:none}}
 
-/* Entry (front page) */
-.entry{min-height:100vh;display:flex;flex-direction:column}
-.e-bar{display:flex;align-items:center;gap:12px;padding:12px max(20px,env(safe-area-inset-right,0px)) 12px max(20px,env(safe-area-inset-left,0px));background:var(--rail);border-bottom:1px solid var(--rail-line);color:#fff}
-.e-bar .btn{margin-left:auto;background:transparent;border-color:rgba(255,255,255,.28);color:#fff}
-.e-bar .btn:hover{background:var(--rail-hover)}
-.e-bar .e-sub{color:var(--rail-text);border-left-color:rgba(255,255,255,.2)}
-.entry-in{width:100%;max-width:1080px;margin:0 auto;padding:40px 20px 32px;flex:1}
-.e-hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:20px;align-items:stretch}
-.e-intro{padding:40px 36px;border-radius:8px;background:var(--rail);border:1px solid var(--rail-line);color:#fff;display:flex;flex-direction:column;justify-content:center}
-.e-school{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--rail-text)}
-.e-school svg{width:16px;height:16px}
-.e-intro h1{font-size:clamp(32px,4.4vw,46px);font-weight:700;letter-spacing:-.01em;line-height:1.1;margin-top:16px}
-.e-lead{font-size:18px;color:var(--rail-text);margin-top:14px;max-width:440px}
-.e-login h2{font-size:17px;padding:18px 20px 14px}
-.role2{display:flex;align-items:center;gap:14px;padding:16px 20px;border-top:1px solid var(--line)}
+/* Entry (front page): glass over solid curved stripes, with a preview of the app */
+.entry{position:relative;min-height:100vh;overflow:hidden;padding:16px max(16px,env(safe-area-inset-right,0px)) 32px max(16px,env(safe-area-inset-left,0px))}
+.stripes{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.entry-in{position:relative;max-width:1120px;margin:0 auto}
+.e-top{display:flex;align-items:center;gap:12px;padding:9px 9px 9px 18px;border-radius:18px}
+.e-top .btn{margin-left:auto}
+.e-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:48px;align-items:center;margin-top:56px}
+.e-pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;font-size:14px;font-weight:600}
+.e-pill svg{width:16px;height:16px;color:var(--blue-text)}
+.e-hero h1{font-size:clamp(38px,5.2vw,60px);font-weight:700;letter-spacing:-.02em;line-height:1.04;margin-top:18px}
+.e-hero h1 span{color:var(--blue-text)}
+.e-lead{font-size:18px;color:var(--muted);margin-top:14px;max-width:460px}
+.e-login{margin-top:28px;max-width:480px;overflow:hidden}
+.e-login .cap{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);padding:14px 18px 10px}
+.role2{display:flex;align-items:center;gap:14px;padding:14px 18px;border-top:1px solid var(--card-line)}
 .role2:hover{background:var(--hover)}
-.bub{width:44px;height:44px;border-radius:8px;display:grid;place-items:center;flex:none;background:var(--blue-soft);color:var(--blue-text)}
+.bub{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;flex:none;background:var(--blue-soft);color:var(--blue-text)}
 .bub svg{width:22px;height:22px}
 .role2 h3{font-size:17px;font-weight:700;margin:0}
 .role2 p{font-size:14px;color:var(--muted);margin-top:2px}
-.go2{margin-left:auto;display:grid;place-items:center;color:var(--faint);flex:none}
-.e-guide{margin-top:20px}
+.go2{margin-left:auto;display:grid;place-items:center;color:var(--faint);flex:none;transition:transform .15s,color .15s}
+.role2:hover .go2{color:var(--blue-text);transform:translateX(3px)}
+.e-show{position:relative;display:flex;justify-content:center;padding:24px 0}
+.e-phone{width:286px;margin:0;background:var(--glass);border-color:var(--glass-line);-webkit-backdrop-filter:blur(26px) saturate(180%);backdrop-filter:blur(26px) saturate(180%)}
+.e-phone .screen{background:var(--bg)}
+.e-phone .opt{padding:10px 12px;font-size:14px;margin-top:8px}
+.e-phone .opt .l{width:26px;height:26px}
+.e-float{position:absolute;display:flex;align-items:center;gap:12px;border-radius:18px}
+.e-grade{left:0;bottom:4px;padding:12px 18px 12px 12px}
+.e-grade b{display:block;font-size:17px}
+.e-alert{right:0;top:2px;padding:10px 14px;font-size:14px;font-weight:600;gap:8px}
+.e-alert i{width:8px;height:8px;border-radius:50%;background:var(--bad);flex:none}
+.e-guide{margin-top:44px;background:var(--glass-2)}
+.e-foot.glass{background:var(--glass-2)}
 .steps5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
-.step5{padding:16px 18px;border-left:1px solid var(--line)}
+.step5{padding:16px 18px;border-left:1px solid var(--card-line)}
 .step5:first-child{border-left:0}
 .step5 .n{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;background:var(--blue);color:#fff}
 .step5 .who{display:block;margin-top:10px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-text)}
 .step5 p{font-size:14px;margin-top:4px;line-height:1.4}
 .step5 .code{white-space:nowrap}
-.e-foot{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;align-items:center;margin-top:16px;padding:0 4px;font-size:13px;color:var(--muted)}
-@media (max-width:900px){.e-hero{grid-template-columns:minmax(0,1fr)}.steps5{grid-template-columns:repeat(2,minmax(0,1fr))}.step5{border-left:0;border-top:1px solid var(--line)}.step5:nth-child(-n+2){border-top:0}.step5:nth-child(even){border-left:1px solid var(--line)}}
-@media (max-width:480px){.entry-in{padding:16px 16px 28px}.e-intro{padding:26px 20px}.e-lead{font-size:16px}.steps5{grid-template-columns:minmax(0,1fr)}.step5,.step5:nth-child(even){display:grid;grid-template-columns:26px minmax(0,1fr);column-gap:12px;row-gap:2px;padding:12px 16px;border-left:0}.step5:nth-child(2){border-top:1px solid var(--line)}.step5 .n{grid-row:span 2}.step5 .who{margin-top:0}.step5 p{margin-top:0}.role2{padding:14px 16px}.e-bar .btn{padding:0 10px}}
+.e-foot{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between;align-items:center;margin-top:14px;padding:12px 18px;border-radius:14px;font-size:13px;color:var(--muted)}
+@media (max-width:900px){.e-hero{grid-template-columns:minmax(0,1fr);gap:8px;margin-top:32px}.e-login{max-width:none}.steps5{grid-template-columns:repeat(2,minmax(0,1fr))}.step5{border-left:0;border-top:1px solid var(--card-line)}.step5:nth-child(-n+2){border-top:0}.step5:nth-child(even){border-left:1px solid var(--card-line)}.e-guide{margin-top:24px}}
+@media (max-width:480px){.e-hero h1{font-size:38px}.e-lead{font-size:16px}.e-top{padding-left:14px}.e-top .btn{padding:0 10px}.role2{padding:13px 16px}
+  .e-phone{width:232px;border-radius:32px;padding:9px}.e-phone .screen{border-radius:24px;padding:14px 11px}.e-phone .fig img{max-height:110px}
+  .e-grade{left:-4px;bottom:2px;padding:10px 14px 10px 10px;gap:10px}.e-grade b{font-size:15px}.e-alert{right:-4px;top:0;font-size:13px;padding:8px 12px}
+  .steps5{grid-template-columns:minmax(0,1fr)}.step5,.step5:nth-child(even){display:grid;grid-template-columns:26px minmax(0,1fr);column-gap:12px;row-gap:2px;padding:12px 16px;border-left:0}.step5:nth-child(2){border-top:1px solid var(--card-line)}.step5 .n{grid-row:span 2}.step5 .who{margin-top:0}.step5 p{margin-top:0}}
 
 /* About page */
 .lp{max-width:1140px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px))}
@@ -548,12 +573,11 @@ body.big .main,body.big .exam{zoom:1.12}
 @media (max-width:860px){
   .shell{grid-template-columns:minmax(0,1fr)}
   .side{display:none}
-  .main{padding:0 16px 110px}
+  .main{padding:0 16px 120px}
   .dtop{display:none}
-  .mtop{display:flex;align-items:center;justify-content:space-between;gap:10px;position:sticky;top:0;z-index:40;margin:0 -16px 18px;padding:calc(10px + env(safe-area-inset-top,0px)) 16px 10px;border-radius:0;background:var(--rail);border:0;border-bottom:1px solid var(--rail-line);box-shadow:none;color:#fff}
-  .mtop .btn{background:transparent;border-color:rgba(255,255,255,.28);color:#fff}
-  .tabbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;justify-content:space-around;padding:4px 4px calc(4px + env(safe-area-inset-bottom,0px));border-radius:0;border:0;border-top:1px solid var(--line);box-shadow:none;background:var(--surface)}
-  .tabbar .nav-i.on{background:none;color:var(--blue-text)}
+  .mtop{display:flex;align-items:center;justify-content:space-between;gap:10px;position:sticky;top:max(8px,env(safe-area-inset-top,0px));z-index:40;margin:8px 0 18px;padding:7px 7px 7px 16px;border-radius:18px}
+  .tabbar{display:flex;position:fixed;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:50;justify-content:space-around;gap:2px;padding:6px;border-radius:24px;background:var(--glass)}
+  .tabbar .nav-i.on{background:var(--blue-soft);color:var(--blue-text);border-radius:18px}
   .tabbar .nav-i{flex-direction:column;gap:2px;min-height:56px;padding:4px 6px;justify-content:center;font-size:12px;flex:1;text-align:center}
   .page-h h1{font-size:26px}
   .form-grid{grid-template-columns:minmax(0,1fr)}
@@ -562,7 +586,7 @@ body.big .main,body.big .exam{zoom:1.12}
   .lrow .acts{width:100%;justify-content:flex-start}
   .hide-m{display:none}
   .show-m{display:block}
-  #toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  #toast{bottom:calc(96px + env(safe-area-inset-bottom,0px))}
   .qtext{font-size:20px}
   .ex-top{align-items:flex-start;padding:10px 10px 10px 14px}
   .ex-top .t{white-space:normal;font-size:14px;line-height:1.3;padding-top:2px}
@@ -1015,6 +1039,19 @@ const confirmBox = (title, body, act, label, kind = 'primary', data = '') => ope
 /* ---------- Gráficos ---------- */
 const CC = ['#164a7f', '#1f63a8', '#0f5a7a', '#2c4c6e', '#1a3a5c', '#3a4f66'];
 const ccColor = k => CC[[...String(k)].reduce((a, ch) => (a * 31 + ch.charCodeAt(0)) >>> 0, 7) % CC.length];
+const DEFW = {testes: 60, trabalhos: 30, outras: 10};
+const GROUPS = [['testes', 'Testes'], ['trabalhos', 'Trabalhos'], ['outras', 'Outras avaliações']];
+const wts = () => Object.assign({}, DEFW, S.school.weights || {});
+const groupOf = k => /teste/i.test(k) ? 'testes' : /trabalho/i.test(k) ? 'trabalhos' : 'outras';
+// Média ponderada pelos critérios da escola; se faltar uma parte, as outras contam na proporção dos seus pesos
+function wmean(list) {
+  const w = wts(), g = {}; list.forEach(x => { if (x.p != null) (g[groupOf(x.kind)] = g[groupOf(x.kind)] || []).push(x.p); });
+  let num = 0, den = 0; Object.entries(g).forEach(([k, ps]) => { const ww = +w[k] || 0; num += ww * avg(ps); den += ww; });
+  return den ? num / den : avg(list.map(x => x.p).filter(x => x != null));
+}
+const groupMeans = list => GROUPS.map(([k, l]) => ({k, label: l, w: +wts()[k] || 0, p: avg(list.filter(x => x.p != null && groupOf(x.kind) === k).map(x => x.p))}));
+const critLine = () => GROUPS.map(([k, l]) => `${l} ${+wts()[k] || 0}%`).join(' · ');
+const avIn = n => S.photos?.[n] ? `<img src="${S.photos[n]}" alt="">` : initials(n);
 const cardCols = n => n % 3 === 0 ? 3 : 2;
 const avg = a => a.length ? a.reduce((x, y) => x + y, 0) / a.length : null;
 const passLine = () => S.school.scale === 'valores' ? 0.475 : 0.5;
@@ -1062,7 +1099,7 @@ function myItems() {
   return myClasses().flatMap(c => classItems(c).filter(i => i.released).map(i => ({id: i.id, kind: i.kind, title: i.title, date: i.date, href: i.href, classId: c.id, subject: c.subject, p: i.p(ME), pending: i.pending(ME)})).filter(i => i.p != null)).sort((a, b) => new Date(a.date) - new Date(b.date));
 }
 function myAverages() {
-  const items = myItems(), subj = myClasses().map(c => { const it = items.filter(i => i.classId === c.id); return {c, items: it, m: avg(it.map(i => i.p))}; });
+  const items = myItems(), subj = myClasses().map(c => { const it = items.filter(i => i.classId === c.id); return {c, items: it, m: wmean(it)}; });
   return {items, subj, geral: avg(subj.filter(x => x.m != null).map(x => x.m))};
 }
 const kpiDonut = (k, p, sub = '') => `<div class="card kpi kpi-d">${donut(p, 78, 8)}<div><div class="k">${k}</div>${sub ? `<div class="s mt-s">${sub}</div>` : ''}</div></div>`;
@@ -1074,9 +1111,9 @@ function classStats(c) {
   const items = classItems(c);
   const perTest = items.map(it => ({t: it, m: avg(c.students.map(sid => it.p(sid)).filter(x => x != null))})).filter(x => x.m != null);
   const all = items.flatMap(it => c.students.map(sid => it.p(sid)).filter(x => x != null));
-  const st = c.students.map(sid => avg(items.map(it => it.p(sid)).filter(x => x != null))).filter(x => x != null);
+  const st = c.students.map(sid => wmean(items.map(it => ({kind: it.kind, p: it.p(sid)})))).filter(x => x != null);
   const tests = S.tests.filter(t => t.classId === c.id && tstate(t) === 'closed');
-  return {items, ts: items, perTest, all, avg: avg(all), pass: st.filter(p => grade(p).pass).length, neg: st.filter(p => !grade(p).pass).length, exits: tests.reduce((a, t) => a + doneSubs(t).filter(s => s.leftCount).length, 0)};
+  return {items, ts: items, perTest, all, avg: avg(st), pass: st.filter(p => grade(p).pass).length, neg: st.filter(p => !grade(p).pass).length, exits: tests.reduce((a, t) => a + doneSubs(t).filter(s => s.leftCount).length, 0)};
 }
 function classCard(c, href) {
   const m = classStats(c);
@@ -1096,18 +1133,39 @@ document.addEventListener('pointerout', e => { if (!e.relatedTarget?.closest?.('
 /* =========================================================
    ENTRADA (privada) e página "Sobre"
    ========================================================= */
+const STRIPES = `<svg class="stripes" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke-linecap="round">
+  <path d="M-120 990 C 260 880 560 1010 900 860 S 1320 560 1600 610" stroke="var(--st-3)" stroke-width="90"/>
+  <path d="M-120 840 C 250 720 540 900 860 700 S 1300 360 1600 420" stroke="var(--st-blue)" stroke-width="150"/>
+  <path d="M-120 690 C 240 590 560 780 880 580 S 1300 220 1600 270" stroke="var(--st-2)" stroke-width="30"/>
+  </g></svg>`;
 function vEntry() {
   const role = (h, i, t, d) => `<a class="role2" href="#${h}"><span class="bub">${ic(i)}</span><div class="grow"><h3>${t}</h3><p>${d}</p></div><span class="go2">${ic('next')}</span></a>`;
   const step = (n, who, txt) => `<div class="step5"><span class="n">${n}</span><span class="who">${who}</span><p>${txt}</p></div>`;
-  return `<div class="entry"><header class="e-bar"><span class="logo"><span class="wm">VELA</span><span class="e-sub">Virtual Education &amp; Learning Analytics</span></span><a class="btn sm" href="#sobre">O que é a VELA?</a></header>
-  <div class="entry-in">
+  const g = grade(0.82);
+  return `<div class="entry">${STRIPES}<div class="entry-in">
+    <header class="e-top glass"><span class="logo"><span class="wm">VELA</span><span class="e-sub">Virtual Education &amp; Learning Analytics</span></span><a class="btn sm ghost" href="#sobre">O que é a VELA?</a></header>
     <div class="e-hero">
-      <section class="e-intro"><span class="e-school">${ic('lock')}${esc(S.school.name)}</span><h1>Testes digitais, corrigidos na hora.</h1><p class="e-lead">O professor abre o teste na aula. Os alunos respondem no telemóvel. A nota sai logo.</p></section>
-      <section class="card e-login"><h2>Entrar como</h2>
-        ${role('escola', 'building', 'Direção', 'Helena Matos · todas as turmas e notas')}
-        ${role('prof', 'cap', 'Professor', 'Ana Ribeiro · criar e abrir testes')}
-        ${role('aluno', 'phone', 'Aluno', 'Inês Carvalho · fazer testes e ver notas')}
-      </section>
+      <div>
+        <span class="e-pill glass">${ic('lock')}${esc(S.school.name)}</span>
+        <h1>Testes digitais,<br><span>corrigidos na hora.</span></h1>
+        <p class="e-lead">O professor abre o teste na aula. Os alunos respondem no telemóvel. A nota sai logo.</p>
+        <div class="card e-login"><span class="cap">Entrar como</span>
+          ${role('escola', 'building', 'Direção', 'Helena Matos · todas as turmas e notas')}
+          ${role('prof', 'cap', 'Professor', 'Ana Ribeiro · criar e abrir testes')}
+          ${role('aluno', 'phone', 'Aluno', 'Inês Carvalho · fazer testes e ver notas')}
+        </div>
+      </div>
+      <div class="e-show" aria-hidden="true">
+        <div class="phone e-phone"><div class="screen">
+          <div class="row between xs muted"><span>Pergunta 3 de 7</span><span class="pill" style="min-height:28px">${ic('clock')}31:08</span></div>
+          <div class="bold mt" style="font-size:15px;line-height:1.35">Quais são as coordenadas do vértice da parábola?</div>
+          <div class="fig mt-s" style="padding:4px"><img src="${FIG.parabola}" alt=""></div>
+          <div class="opt sel"><span class="l">A</span>(2, 3)</div>
+          <div class="opt"><span class="l">B</span>(3, 2)</div>
+        </div></div>
+        <div class="e-float e-grade glass">${donut(0.82, 58, 6)}<div><span class="xs muted">Matemática A</span><b>${esc(g.full)}</b><span class="xs faint">Corrigido na hora</span></div></div>
+        <div class="e-float e-alert glass"><i></i>Saiu da página do teste · 1 vez</div>
+      </div>
     </div>
     <div class="card e-guide"><div class="card-h"><h2>Experimenta em 5 passos</h2><span class="xs faint">Dica: abre em dois separadores</span></div>
       <div class="steps5">
@@ -1117,7 +1175,7 @@ function vEntry() {
         ${step(4, 'Professor', 'Vê as notas e quem saiu do teste')}
         ${step(5, 'Direção', 'Muda a escala e vê a pauta')}
       </div></div>
-    <div class="e-foot"><span>Demonstração. Os dados ficam só neste browser.</span><button class="link" data-act="reset">Repor dados</button></div>
+    <div class="e-foot glass"><span>Demonstração. Os dados ficam só neste browser.</span><button class="link" data-act="reset">Repor dados</button></div>
   </div></div>`;
 }
 function vSobre() {
@@ -1163,8 +1221,8 @@ function shell(role, active, content) {
       <div class="side-foot">${role === 'escola' ? '' : `<a class="nav-i ${active === role + '-definicoes' ? 'on' : ''}" href="#${role}-definicoes">${ic('gear')}<span>Definições</span></a>`}
       <a class="nav-i" href="#entrar">${ic('logout')}<span>Mudar de perfil</span></a></div></aside>
     <main class="main">
-      <div class="dtop"><span class="dtop-s">${ic('building')}${esc(S.school.name)}</span><span class="dtop-me"><span><span class="small bold" style="display:block">${esc(me.n)}</span><span class="xs faint">${esc(me.s)}</span></span><span class="av sm">${initials(me.n)}</span></span></div>
-      <div class="mtop glass"><a class="logo" href="#${role}">${LOGO}<span class="wm">VELA</span></a>${role === 'escola' ? `<a class="btn sm" href="#entrar">${ic('logout')}Perfil</a>` : `<a class="btn sm" href="#${role}-definicoes">${ic('gear')}Conta</a>`}</div>
+      <div class="dtop"><span class="dtop-s">${ic('building')}${esc(S.school.name)}</span><a class="dtop-me" href="#${role}-definicoes" title="Conta"><span><span class="small bold" style="display:block">${esc(me.n)}</span><span class="xs faint">${esc(me.s)}</span></span><span class="av sm">${avIn(me.n)}</span></a></div>
+      <div class="mtop glass"><a class="logo" href="#${role}">${LOGO}<span class="wm">VELA</span></a><a class="mtop-me" href="#${role}-definicoes" aria-label="Conta e fotografia"><span class="av sm">${avIn(me.n)}</span></a></div>
       ${content}
     </main>
     <nav class="tabbar glass">${items}</nav>
@@ -1217,7 +1275,7 @@ function vEscolaProfs() {
         const cs = S.classes.filter(c => c.teacherId === p.id);
         const ts = S.tests.filter(t => cs.includes(tclass(t)) && tstate(t) === 'closed');
         const ps = ts.flatMap(t => doneSubs(t).map(s => scoreSub(s, t).p));
-        return `<tr><td><div class="who"><span class="av sm">${initials(p.name)}</span>${esc(p.name)}</div></td><td>${cs.map(c => `${esc(c.name)} ${esc(c.subject)}`).join('<br>')}</td><td class="num hide-m">${ts.length}</td><td class="num">${ps.length ? `<div class="gcell">${mini(avg(ps))}${gradeCell(avg(ps))}</div>` : '<span class="faint">-</span>'}</td></tr>`;
+        return `<tr><td><div class="who"><span class="av sm">${avIn(p.name)}</span>${esc(p.name)}</div></td><td>${cs.map(c => `${esc(c.name)} ${esc(c.subject)}`).join('<br>')}</td><td class="num hide-m">${ts.length}</td><td class="num">${ps.length ? `<div class="gcell">${mini(avg(ps))}${gradeCell(avg(ps))}</div>` : '<span class="faint">-</span>'}</td></tr>`;
       }).join('')}</tbody></table></div>`)}`;
   return shell('escola', 'escola-professores', content);
 }
@@ -1238,7 +1296,11 @@ function vEscolaDef() {
         <div class="notice mt">${ic('lock')}<div>Cada aluno só vê as suas notas, e só depois de o professor as mostrar. As perguntas ficam escondidas até lá.</div></div>
         <div class="mt-l row wrap between"><div><div class="lbl">Código da escola</div><div class="code mt-s" style="font-size:22px">${fmtCode(S.school.code)}</div></div><button class="btn" data-act="newSchoolCode">${ic('refresh')}Gerar novo código</button></div>
       </div>
-    </div>`;
+    </div>
+    <div class="card pad-l sec"><h2 class="h2c">Critérios de avaliação</h2><p class="hint mt-s">Quanto conta cada tipo de avaliação na média de cada disciplina.</p>
+      <div class="form-grid mt" style="grid-template-columns:repeat(3,minmax(0,1fr))">${GROUPS.map(([k, l]) => `<label class="field"><span>${l}</span><div class="row" style="gap:8px"><input class="inp" type="number" min="0" max="100" inputmode="numeric" data-weight="${k}" value="${+wts()[k] || 0}"><span class="muted bold">%</span></div></label>`).join('')}</div>
+      ${(() => { const t = GROUPS.reduce((a, [k]) => a + (+wts()[k] || 0), 0); return `<p class="small mt ${t === 100 ? 'muted' : 'bad-c'}">Total: ${t}%${t === 100 ? '' : '. Os pesos devem somar 100%.'}</p>`; })()}</div>
+    ${acctCard('Helena Matos', `Direção · ${esc(S.school.name)}`)}`;
   return shell('escola', 'escola-definicoes', content);
 }
 
@@ -1248,13 +1310,13 @@ function vPauta(id, role) {
   if (!c || (role === 'prof' && c.teacherId !== TEACHER)) return shell(role, role, `<div class="card empty">Turma não encontrada.</div>`);
   const ts = classItems(c);
   const cell = (t, sid) => t.p(sid);
-  const rows = c.students.map(sid => { const ps = ts.map(t => cell(t, sid)); const v = ps.filter(x => x != null); return {sid, ps, avg: v.length ? v.reduce((a, b) => a + b, 0) / v.length : null}; })
+  const rows = c.students.map(sid => { const ps = ts.map(t => cell(t, sid)); return {sid, ps, avg: wmean(ts.map((t, i) => ({kind: t.kind, p: ps[i]})))}; })
     .sort((a, b) => person(a.sid).name.localeCompare(person(b.sid).name, 'pt'));
   const colAvg = ts.map((t, i) => { const v = rows.map(r => r.ps[i]).filter(x => x != null); return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null; });
   const all = rows.map(r => r.avg).filter(x => x != null);
   const back = role === 'escola' ? ['#escola', 'Visão geral'] : ['#prof-turmas', 'Turmas'];
   const cst = classStats(c);
-  const content = `<a class="crumb" href="${back[0]}">${ic('back')}${back[1]}</a>` + pageH(`Pauta · ${esc(c.name)} ${esc(c.subject)}`, `${esc(person(c.teacherId).name)} · ${plural(c.students.length, 'aluno', 'alunos')} · ${SCALES[S.school.scale].name}`, `<button class="btn" data-act="copyPauta" data-id="${c.id}">${ic('copy')}Copiar para Excel</button>`) + (role === 'prof' ? turmaTabs(c, 'prof', 'pauta') : '') + `
+  const content = `<a class="crumb" href="${back[0]}">${ic('back')}${back[1]}</a>` + pageH(`Pauta · ${esc(c.name)} ${esc(c.subject)}`, `${esc(person(c.teacherId).name)} · ${plural(c.students.length, 'aluno', 'alunos')} · ${SCALES[S.school.scale].name}<br><span class="xs">Média ponderada: ${critLine()}</span>`, `<button class="btn" data-act="copyPauta" data-id="${c.id}">${ic('copy')}Copiar para Excel</button>`) + (role === 'prof' ? turmaTabs(c, 'prof', 'pauta') : '') + `
     <div class="grid-2">
       <div class="card pad-l hero-stats">${donut(cst.avg, 120, 12)}<div class="grow hs-grid">
         <div><div class="lbl">Média da turma</div><div class="hs-v">${cst.avg == null ? '-' : grade(cst.avg).full}</div></div>
@@ -1264,10 +1326,10 @@ function vPauta(id, role) {
       ${section('Média de cada avaliação', cst.perTest.length ? `<div class="pad">${hbars(cst.perTest.map(x => ({label: x.t.title, sub: `${x.t.kind} · ${fmtDate(x.t.date)}`, p: x.m})))}</div>` : '<div class="empty">Ainda sem avaliações com nota.</div>')}
     </div>
     <div class="card sec pauta-t"><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Aluno</th>${ts.map(t => `<th class="num" title="${esc(t.title)}">${esc(t.title.length > 18 ? t.title.slice(0, 17) + '…' : t.title)}<div class="xs faint" style="font-weight:500">${esc(t.kind)} · ${fmtDate(t.date)}</div></th>`).join('')}<th class="num">Média</th></tr></thead><tbody>
-    ${rows.map(r => `<tr><td><div class="who"><span class="av sm">${initials(person(r.sid).name)}</span>${esc(person(r.sid).name)}</div></td>${r.ps.map(p => `<td class="num">${p == null ? '<span class="faint">falta</span>' : gradeCell(p)}</td>`).join('')}<td class="num">${r.avg == null ? '<span class="faint">-</span>' : gradeCell(r.avg)}</td></tr>`).join('')}
+    ${rows.map(r => `<tr><td><div class="who"><span class="av sm">${avIn(person(r.sid).name)}</span>${esc(person(r.sid).name)}</div></td>${r.ps.map(p => `<td class="num">${p == null ? '<span class="faint">falta</span>' : gradeCell(p)}</td>`).join('')}<td class="num">${r.avg == null ? '<span class="faint">-</span>' : gradeCell(r.avg)}</td></tr>`).join('')}
     <tr class="sum"><td>Média da turma</td>${colAvg.map(p => `<td class="num">${p == null ? '-' : gradeCell(p)}</td>`).join('')}<td class="num">${all.length ? gradeCell(all.reduce((a, b) => a + b, 0) / all.length) : '-'}</td></tr>
     </tbody></table></div>${ts.length ? '' : '<div class="empty">Ainda não há avaliações com nota nesta turma.</div>'}</div>
-    <div class="pauta-m sec">${rows.map(r => `<div class="card pad pm"><div class="row between"><div class="who"><span class="av sm">${initials(person(r.sid).name)}</span><b>${esc(person(r.sid).name)}</b></div><div class="pm-avg"><span class="xs faint">Média</span>${r.avg == null ? '<span class="faint">-</span>' : gradeCell(r.avg)}</div></div>
+    <div class="pauta-m sec">${rows.map(r => `<div class="card pad pm"><div class="row between"><div class="who"><span class="av sm">${avIn(person(r.sid).name)}</span><b>${esc(person(r.sid).name)}</b></div><div class="pm-avg"><span class="xs faint">Média</span>${r.avg == null ? '<span class="faint">-</span>' : gradeCell(r.avg)}</div></div>
       <div class="pm-g">${r.ps.map((p, i) => `<div class="pm-c"><span class="pm-t">${esc(ts[i].title)}</span><span class="xs faint">${esc(ts[i].kind)}</span><b>${p == null ? '<span class="faint">falta</span>' : gradeCell(p)}</b></div>`).join('')}</div></div>`).join('')}</div>`;
   return shell(role, role === 'escola' ? 'escola' : 'prof-turmas', content);
 }
@@ -1285,8 +1347,8 @@ function vProf() {
   const content = pageH(`${greet()}, Ana`, new Date().toLocaleDateString('pt-PT', {weekday: 'long', day: 'numeric', month: 'long'}), `<a class="btn primary" href="#prof-novo">${ic('plus')}Criar</a>`) + `
     ${open.length ? section('A decorrer agora', open.map(t => `<div class="lrow"><div class="grow"><div class="t">${esc(t.title)}</div><div class="m">${esc(tclass(t).name)} · ${subsOf(t.id).filter(s => s.status === 'submitted').length} de ${tclass(t).students.length} entregaram</div></div><span class="badge ok"><span class="live"></span><span data-cd="${t.id}">${fmtLeft(t.endsAt - Date.now())}</span></span><div class="acts"><a class="btn primary" href="#prof-teste-${t.id}">Acompanhar</a></div></div>`).join('')) : ''}
     ${section('Testes prontos para abrir', ready.length ? ready.map(t => `<div class="lrow"><div class="grow"><div class="t">${esc(t.title)}</div><div class="m">${esc(tclass(t).name)} · ${esc(t.subject)} · ${t.duration} min · ${plural(t.questions.length, 'pergunta', 'perguntas')}</div></div><div class="acts"><a class="btn" href="#prof-editar-${t.id}">${ic('edit')}Editar</a><button class="btn primary" data-act="askOpen" data-id="${t.id}">${ic('play')}Abrir teste</button></div></div>`).join('') : `<div class="empty">Não tens testes por abrir. <a class="link" href="#prof-novo">Criar um teste</a></div>`)}
-    ${pend.length ? section('Pedidos para entrar nas turmas', pend.map(({c, sid}) => `<div class="lrow"><span class="av sm">${initials(person(sid).name)}</span><div class="grow"><div class="t">${esc(person(sid).name)}</div><div class="m">Quer entrar em ${esc(c.name)} ${esc(c.subject)}</div></div><div class="acts"><button class="btn" data-act="reject" data-c="${c.id}" data-s="${sid}">Recusar</button><button class="btn ok" data-act="accept" data-c="${c.id}" data-s="${sid}">${ic('check')}Aceitar</button></div></div>`).join('')) : ''}
-    ${(() => { const th = threads('prof').filter(t => t.unread); return th.length ? section('Mensagens novas', th.map(t => `<a class="lrow nrow" href="#prof-mensagens-${t.c.id}-${t.sid}"><span class="av sm">${initials(person(t.sid).name)}</span><div class="grow"><div class="t">${esc(person(t.sid).name)} · ${esc(t.c.name)}</div><div class="m">${esc(t.last.text)}</div></div><span class="nb">${t.unread}</span></a>`).join('')) : ''; })()}
+    ${pend.length ? section('Pedidos para entrar nas turmas', pend.map(({c, sid}) => `<div class="lrow"><span class="av sm">${avIn(person(sid).name)}</span><div class="grow"><div class="t">${esc(person(sid).name)}</div><div class="m">Quer entrar em ${esc(c.name)} ${esc(c.subject)}</div></div><div class="acts"><button class="btn" data-act="reject" data-c="${c.id}" data-s="${sid}">Recusar</button><button class="btn ok" data-act="accept" data-c="${c.id}" data-s="${sid}">${ic('check')}Aceitar</button></div></div>`).join('')) : ''}
+    ${(() => { const th = threads('prof').filter(t => t.unread); return th.length ? section('Mensagens novas', th.map(t => `<a class="lrow nrow" href="#prof-mensagens-${t.c.id}-${t.sid}"><span class="av sm">${avIn(person(t.sid).name)}</span><div class="grow"><div class="t">${esc(person(t.sid).name)} · ${esc(t.c.name)}</div><div class="m">${esc(t.last.text)}</div></div><span class="nb">${t.unread}</span></a>`).join('')) : ''; })()}
     ${(() => { const tm = S.assignments.filter(a => cls(a.classId).teacherId === TEACHER).map(a => ({a, n: aSubmitted(a).filter(x => x.p == null).length})).filter(x => x.n); return tm.length ? section('Trabalhos para corrigir', tm.map(({a, n}) => `<div class="lrow"><div class="grow"><div class="t">${esc(a.title)}</div><div class="m">${esc(cls(a.classId).name)} · ${plural(n, 'entrega sem nota', 'entregas sem nota')}</div></div><div class="acts"><a class="btn" href="#prof-trabalho-${a.id}">Corrigir</a></div></div>`).join('')) : ''; })()}
     ${(() => { const unrel = ts.filter(t => tstate(t) === 'closed' && !t.released); return unrel.length ? section('Notas que os alunos ainda não veem', unrel.map(t => { const n = testStats(t).pending; return `<div class="lrow"><div class="grow"><div class="t">${esc(t.title)}</div><div class="m">${esc(tclass(t).name)} · ${n ? `faltam ${plural(n, 'correção', 'correções')}` : 'correção completa'}</div></div><div class="acts"><a class="btn" href="#prof-teste-${t.id}">Rever</a><button class="btn primary" data-act="release" data-id="${t.id}">Mostrar aos alunos</button></div></div>`; }).join('')) : ''; })()}
     ${review.length ? section('Respostas para corrigir', review.map(({t, n}) => `<div class="lrow"><div class="grow"><div class="t">${esc(t.title)}</div><div class="m">${esc(tclass(t).name)} · ${plural(n, 'aluno tem', 'alunos têm')} desenvolvimento por confirmar</div></div><div class="acts"><a class="btn" href="#prof-teste-${t.id}">Corrigir</a></div></div>`).join('')) : ''}
@@ -1303,7 +1365,7 @@ function vProfTurmas() {
       <div class="pad turma-b">${donut(m.avg, 96, 10)}
         <div class="grow" style="min-width:180px"><div class="lbl xs">Média por teste</div><div class="mt-s">${spark(m.perTest.map(x => x.m), 220, 50) || '<span class="hint">Aparece a partir de 2 testes.</span>'}</div></div>
         <div class="grow" style="min-width:200px"><div class="lbl xs" style="margin-bottom:6px">Alunos com positiva</div>${m.pass + m.neg ? split([{n: m.pass, label: 'Positiva'}, {n: m.neg, cls: 'neg', label: 'Negativa'}]) : '<span class="hint">Sem notas ainda.</span>'}</div></div>
-      ${c.pending.map(sid => `<div class="lrow" style="border-top:1px solid var(--line)"><span class="av sm">${initials(person(sid).name)}</span><div class="grow"><div class="t">${esc(person(sid).name)}</div><div class="m">Pediu para entrar</div></div><div class="acts"><button class="btn" data-act="reject" data-c="${c.id}" data-s="${sid}">Recusar</button><button class="btn ok" data-act="accept" data-c="${c.id}" data-s="${sid}">${ic('check')}Aceitar</button></div></div>`).join('')}
+      ${c.pending.map(sid => `<div class="lrow" style="border-top:1px solid var(--line)"><span class="av sm">${avIn(person(sid).name)}</span><div class="grow"><div class="t">${esc(person(sid).name)}</div><div class="m">Pediu para entrar</div></div><div class="acts"><button class="btn" data-act="reject" data-c="${c.id}" data-s="${sid}">Recusar</button><button class="btn ok" data-act="accept" data-c="${c.id}" data-s="${sid}">${ic('check')}Aceitar</button></div></div>`).join('')}
     </div>`; }).join('')}</div>`;
   return shell('prof', 'prof-turmas', content);
 }
@@ -1684,7 +1746,7 @@ function vProfTeste(id) {
         <div class="grow" style="min-width:240px"><div class="lbl" style="margin-bottom:8px">Progresso da turma</div>${split([{n: nDone, label: 'Entregaram'}, {n: nDoing, cls: 'soft', label: 'A fazer'}, {n: c.students.length - nDone - nDoing, cls: 'mute', label: 'Não começaram'}])}</div>
         <div class="row wrap"><button class="btn" data-act="addTime" data-id="${t.id}">${ic('plus')}Mais 5 minutos</button><button class="btn danger" data-act="askEnd" data-id="${t.id}">${ic('stop')}Terminar teste</button></div></div>
       ${section('Alunos', `<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Aluno</th><th>Estado</th><th class="hide-m">Respondidas</th><th>Fora do teste</th></tr></thead><tbody>
-        ${rows.map(({sid, s: x}) => `<tr><td><div class="who"><span class="av sm ${x ? '' : 'mute'}">${initials(person(sid).name)}</span>${esc(person(sid).name)}</div></td><td>${!x ? '<span class="faint">Não começou</span>' : x.status === 'submitted' ? '<span class="badge ok">Entregou</span>' : '<span class="badge blue">A fazer</span>'}</td><td class="hide-m">${x ? `${x.answers.filter(a => !blankAns(a)).length} de ${t.questions.length}` : '-'}</td><td>${x?.leftCount ? `<span class="badge bad">${ic('eyeoff')}${x.leftCount}</span>` : x ? '0' : '-'}</td></tr>`).join('')}
+        ${rows.map(({sid, s: x}) => `<tr><td><div class="who"><span class="av sm ${x ? '' : 'mute'}">${avIn(person(sid).name)}</span>${esc(person(sid).name)}</div></td><td>${!x ? '<span class="faint">Não começou</span>' : x.status === 'submitted' ? '<span class="badge ok">Entregou</span>' : '<span class="badge blue">A fazer</span>'}</td><td class="hide-m">${x ? `${x.answers.filter(a => !blankAns(a)).length} de ${t.questions.length}` : '-'}</td><td>${x?.leftCount ? `<span class="badge bad">${ic('eyeoff')}${x.leftCount}</span>` : x ? '0' : '-'}</td></tr>`).join('')}
       </tbody></table></div>`, '<span class="xs faint">Atualiza sozinho</span>')}`);
   }
   // Terminado: resultados
@@ -1704,8 +1766,8 @@ function vProfTeste(id) {
     </div>
     <div class="grid-2 mt">
       ${section('Notas', `<p class="hint" style="padding:10px 20px 0">Carrega num aluno para ver as respostas e o registo.</p><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Aluno</th><th class="num">Nota</th><th>Correção</th><th>Fora do teste</th><th class="hide-m">Tempo</th></tr></thead><tbody>
-        ${rows.map(({s, r}) => `<tr class="click" data-act="viewSub" data-id="${s.id}"><td><div class="who"><span class="av sm">${initials(person(s.studentId).name)}</span>${esc(person(s.studentId).name)}</div></td><td class="num"><div class="gcell">${mini(r.p)}${gradeCell(r.p)}</div></td><td>${r.pending ? `<span class="badge warn">Rever ${r.pending}</span>` : '<span class="badge ok">Feita</span>'}</td><td>${s.leftCount ? `<span class="badge bad">${ic('eyeoff')}${s.leftCount}</span>` : '<span class="muted">0</span>'}</td><td class="hide-m muted" style="white-space:nowrap">${Math.round((s.durationMs || 0) / MIN)} min</td></tr>`).join('')}
-        ${missing.map(sid => `<tr><td><div class="who"><span class="av sm mute">${initials(person(sid).name)}</span><span class="muted">${esc(person(sid).name)}</span></div></td><td class="num faint">falta</td><td></td><td></td><td class="hide-m"></td></tr>`).join('')}
+        ${rows.map(({s, r}) => `<tr class="click" data-act="viewSub" data-id="${s.id}"><td><div class="who"><span class="av sm">${avIn(person(s.studentId).name)}</span>${esc(person(s.studentId).name)}</div></td><td class="num"><div class="gcell">${mini(r.p)}${gradeCell(r.p)}</div></td><td>${r.pending ? `<span class="badge warn">Rever ${r.pending}</span>` : '<span class="badge ok">Feita</span>'}</td><td>${s.leftCount ? `<span class="badge bad">${ic('eyeoff')}${s.leftCount}</span>` : '<span class="muted">0</span>'}</td><td class="hide-m muted" style="white-space:nowrap">${Math.round((s.durationMs || 0) / MIN)} min</td></tr>`).join('')}
+        ${missing.map(sid => `<tr><td><div class="who"><span class="av sm mute">${avIn(person(sid).name)}</span><span class="muted">${esc(person(sid).name)}</span></div></td><td class="num faint">falta</td><td></td><td></td><td class="hide-m"></td></tr>`).join('')}
       </tbody></table></div>`, `<button class="btn sm" data-act="copyTest" data-id="${t.id}">${ic('copy')}Copiar para Excel</button>`)}
       <div>
         ${section('Distribuição das notas', `<div class="pad">${distChart(st.rows.map(x => x.r.p))}</div>`)}
@@ -1828,7 +1890,7 @@ function subModal(subId) {
       ${q.type === 'open' ? `<div class="a xs">${ic('spark')}<div>Sugestão da VELA: <b>${gr.pts} de ${gr.max}</b>${gr.hits?.length ? ` (encontrou: ${gr.hits.map(esc).join(', ')})` : ''}. ${ov != null ? '<span class="ok-c">Confirmado.</span>' : '<span class="warn-c">Por confirmar.</span>'}</div></div>` : ''}
     </div>`;
   }).join('');
-  openModal(`<div class="row between" style="align-items:flex-start"><div class="row"><span class="av">${initials(person(s.studentId).name)}</span><div><h2>${esc(person(s.studentId).name)}</h2><div class="small muted">${esc(t.title)} · ${Math.round((s.durationMs || 0) / MIN)} min</div></div></div><button class="btn sm icon" data-act="close" aria-label="Fechar">${ic('x')}</button></div>
+  openModal(`<div class="row between" style="align-items:flex-start"><div class="row"><span class="av">${avIn(person(s.studentId).name)}</span><div><h2>${esc(person(s.studentId).name)}</h2><div class="small muted">${esc(t.title)} · ${Math.round((s.durationMs || 0) / MIN)} min</div></div></div><div class="row" style="gap:6px">${(() => { const subs = doneSubs(t).slice().sort((a, b) => byName(a.studentId, b.studentId)); return pager(subs.map(y => y.id), s.id, n => `data-act="viewSub" data-id="${n}"`); })()}<button class="btn sm icon" data-act="close" aria-label="Fechar">${ic('x')}</button></div></div>
     <div class="row wrap mt"><span class="badge ${g.pass ? 'blue' : 'bad'}" id="subScore">${g.full}</span>${s.leftCount ? `<span class="badge bad badge-w">${ic('eyeoff')}Saiu da página do teste ${s.leftCount} ${s.leftCount > 1 ? 'vezes' : 'vez'}</span>` : '<span class="badge">Ficou sempre no teste</span>'}</div>
     <div class="card pad mt"><div class="bold small" style="margin-bottom:4px">Registo do teste</div>${evs}</div>
     <p class="hint mt">Podes mudar os pontos de qualquer pergunta se a correção automática se enganou.</p>
@@ -1904,7 +1966,7 @@ function vProfTrabalho(id) {
   const rows = c.students.slice().sort((x, y) => person(x).name.localeCompare(person(y).name, 'pt')).map(sid => {
     const x = asubOf(a.id, sid), ok = x && x.status === 'submitted', nm = person(sid).name;
     const st = ok ? (x.late ? '<span class="badge warn">Com atraso</span>' : '<span class="badge ok">Entregue</span>') : Date.now() > new Date(a.due) ? '<span class="badge bad">Em falta</span>' : '<span class="badge">Por entregar</span>';
-    return `<tr><td><div class="who"><span class="av sm">${initials(nm)}</span>${esc(nm)}</div></td><td>${st}</td><td class="hide-m">${ok ? `<button class="btn sm" data-act="aView" data-a="${a.id}" data-s="${sid}">${ic('clip')}${plural(x.files.length + (x.link ? 1 : 0), 'item', 'itens')}</button>` : '<span class="faint">-</span>'}</td><td class="num"><input class="inp ginp" data-agrade="${a.id}:${sid}" value="${fromP(x?.p)}" placeholder="-" inputmode="decimal" aria-label="Nota de ${esc(nm)}"></td></tr>`;
+    return `<tr><td><div class="who"><span class="av sm">${avIn(nm)}</span>${esc(nm)}</div></td><td>${st}</td><td class="hide-m">${ok ? `<button class="btn sm" data-act="aView" data-a="${a.id}" data-s="${sid}">${ic('clip')}${plural(x.files.length + (x.link ? 1 : 0), 'item', 'itens')}</button>` : '<span class="faint">-</span>'}</td><td class="num"><input class="inp ginp" data-agrade="${a.id}:${sid}" value="${fromP(x?.p)}" placeholder="-" inputmode="decimal" aria-label="Nota de ${esc(nm)}"></td></tr>`;
   }).join('');
   const content = crumb('#prof-trabalhos', 'Trabalhos') + pageH(esc(a.title), `${esc(c.name)} · ${esc(c.subject)} · prazo ${fmtDue(a.due)}`, `<span class="badge ${new Date(a.due) < Date.now() ? '' : 'blue'}">${dueLeft(a.due)}</span>`) + relBarX(a, 'a') + `
     <div class="kpis n4">
@@ -1914,7 +1976,7 @@ function vProfTrabalho(id) {
       ${kpiDonut('Média do trabalho', avg(ps))}
     </div>
     <div class="grid-2 sec">
-      ${section('Entregas e notas', `<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Aluno</th><th>Estado</th><th class="hide-m">Entrega</th><th class="num">Nota</th></tr></thead><tbody>${rows}</tbody></table></div>`, `<span class="xs faint">Nota ${scaleHint()}</span>`)}
+      ${section('Entregas e notas', `${sub.length ? `<div class="pad" style="padding-bottom:0"><button class="btn primary block" data-act="aView" data-a="${a.id}" data-s="${(sub.map(y => y.studentId).sort(byName).find(n => asubOf(a.id, n)?.p == null)) || sub.map(y => y.studentId).sort(byName)[0]}">${ic('pen')}Corrigir entregas uma a uma</button></div>` : ''}<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Aluno</th><th>Estado</th><th class="hide-m">Entrega</th><th class="num">Nota</th></tr></thead><tbody>${rows}</tbody></table></div>`, `<span class="xs faint">Nota ${scaleHint()}</span>`)}
       <div>
         ${section('Instruções', `<div class="pad"><p style="white-space:pre-line">${esc(a.desc || 'Sem instruções.')}</p><div class="lbl mt">Os alunos podem entregar</div><div class="row wrap mt-s">${a.kinds.map(k => `<span class="badge">${KINDS[k]}</span>`).join('')}</div></div>`)}
         ${section('Comentários da turma', `<div class="pad">${commentsBlock(a.comments, 'asg', a.id, 'prof')}</div>`)}
@@ -1922,14 +1984,16 @@ function vProfTrabalho(id) {
     </div>`;
   return shell('prof', 'prof-testes', content);
 }
+const pager = (ids, cur, mk) => { const i = ids.indexOf(cur); if (i < 0 || ids.length < 2) return ''; return `<span class="xs faint hide-m" style="white-space:nowrap">${i + 1} de ${ids.length}</span><button class="btn sm icon" ${i > 0 ? mk(ids[i - 1]) : 'disabled'} aria-label="Aluno anterior">${ic('back')}</button><button class="btn sm icon" ${i < ids.length - 1 ? mk(ids[i + 1]) : 'disabled'} aria-label="Aluno seguinte">${ic('next')}</button>`; };
+const byName = (a, b) => person(a).name.localeCompare(person(b).name, 'pt');
 function aViewModal(aid, sid) {
   const a = S.assignments.find(x => x.id === aid), x = asubOf(aid, sid), nm = person(sid).name;
-  openModal(`<div class="row between" style="align-items:flex-start"><div class="row"><span class="av">${initials(nm)}</span><div><h2>${esc(nm)}</h2><div class="small muted">${esc(a.title)} · entregue ${fmtDue(x.submittedAt)}${x.late ? ' · com atraso' : ''}</div></div></div><button class="btn sm icon" data-act="close" aria-label="Fechar">${ic('x')}</button></div>
+  openModal(`<div class="row between" style="align-items:flex-start"><div class="row"><span class="av">${avIn(nm)}</span><div><h2>${esc(nm)}</h2><div class="small muted">${esc(a.title)} · entregue ${fmtDue(x.submittedAt)}${x.late ? ' · com atraso' : ''}</div></div></div><div class="row" style="gap:6px">${pager(aSubmitted(a).map(y => y.studentId).sort(byName), sid, n => `data-act="aView" data-a="${aid}" data-s="${n}"`)}<button class="btn sm icon" data-act="close" aria-label="Fechar">${ic('x')}</button></div></div>
     <div class="stack mt" style="gap:8px">${x.files.map(f => fileCard(f)).join('')}${x.link ? `<a class="fcard" href="${esc(x.link)}" target="_blank" rel="noopener"><span class="ftype">${ic('link')}</span><div class="grow" style="min-width:0"><div class="fname">${esc(x.link)}</div><div class="xs faint">Abre numa nova janela</div></div></a>` : ''}</div>
     ${x.note ? `<div class="card pad mt"><div class="lbl">Nota do aluno</div><p class="mt-s">${esc(x.note)}</p></div>` : ''}
     <div class="form-grid mt-l"><label class="field"><span>Nota (${scaleHint()})</span><input class="inp" data-agrade="${aid}:${sid}" value="${fromP(x.p)}" inputmode="decimal"></label>
     <label class="field full"><span>Comentário para o aluno</span><textarea class="inp" rows="3" data-afb="${aid}:${sid}" placeholder="Opcional">${esc(x.feedback || '')}</textarea></label></div>
-    <div class="row end mt"><button class="btn primary" data-act="close">${ic('check')}Guardar e fechar</button></div>`, 'wide');
+    <div class="row end mt">${(() => { const ids = aSubmitted(a).map(y => y.studentId).sort(byName), nx = ids.slice(ids.indexOf(sid) + 1).find(n => asubOf(aid, n)?.p == null); return nx ? `<button class="btn" data-act="aView" data-a="${aid}" data-s="${nx}">Seguinte sem nota${ic('next')}</button>` : ''; })()}<button class="btn primary" data-act="close">${ic('check')}Guardar e fechar</button></div>`, 'wide');
 }
 
 /* ---- Notas sem teste ---- */
@@ -1953,7 +2017,7 @@ function vProfNota(id) {
   const m = S.manual.find(x => x.id === id);
   if (!m || cls(m.classId).teacherId !== TEACHER) return shell('prof', 'prof-testes', '<div class="card empty">Avaliação não encontrada.</div>');
   const c = cls(m.classId);
-  const rows = c.students.slice().sort((x, y) => person(x).name.localeCompare(person(y).name, 'pt')).map(sid => `<div class="mrow"><div class="who"><span class="av sm">${initials(person(sid).name)}</span><b>${esc(person(sid).name)}</b></div><input class="inp ginp" data-mgrade="${m.id}:${sid}" value="${fromP(m.grades[sid])}" placeholder="-" inputmode="decimal" aria-label="Nota de ${esc(person(sid).name)}"></div>`).join('');
+  const rows = c.students.slice().sort((x, y) => person(x).name.localeCompare(person(y).name, 'pt')).map(sid => `<div class="mrow"><div class="who"><span class="av sm">${avIn(person(sid).name)}</span><b>${esc(person(sid).name)}</b></div><input class="inp ginp" data-mgrade="${m.id}:${sid}" value="${fromP(m.grades[sid])}" placeholder="-" inputmode="decimal" aria-label="Nota de ${esc(person(sid).name)}"></div>`).join('');
   const content = crumb('#prof-notas', 'Outras notas') + pageH(esc(m.title), `${esc(m.kind)} · ${esc(c.name)} ${esc(c.subject)} · ${fmtDate(m.date)}`, `<button class="btn danger" data-act="delManual" data-id="${m.id}">${ic('trash')}Apagar</button>`) + relBarX(m, 'm') + mStats(m) +
     section('Notas dos alunos', `<div>${rows}</div>`, `<span class="xs faint">Escreve ${scaleHint()} · guarda sozinho</span>`);
   return shell('prof', 'prof-testes', content);
@@ -2028,9 +2092,9 @@ async function addFiles(aid, files) {
 /* ---- Mural da turma e comentários ---- */
 const isTeacher = id => person(id).role === 'teacher';
 const meId = role => role === 'prof' ? TEACHER : ME;
-const cmtHtml = cm => `<div class="cmt"><span class="av sm ${isTeacher(cm.authorId) ? '' : 'stu'}">${initials(person(cm.authorId).name)}</span><div class="grow" style="min-width:0"><div class="small"><b>${esc(person(cm.authorId).name)}</b>${isTeacher(cm.authorId) ? ' <span class="badge blue" style="min-height:20px;padding:0 8px;font-size:11px">Professor</span>' : ''} <span class="xs faint">${fmtShort(cm.at)}</span></div><div class="cmt-t">${esc(cm.text)}</div></div></div>`;
+const cmtHtml = cm => `<div class="cmt"><span class="av sm ${isTeacher(cm.authorId) ? '' : 'stu'}">${avIn(person(cm.authorId).name)}</span><div class="grow" style="min-width:0"><div class="small"><b>${esc(person(cm.authorId).name)}</b>${isTeacher(cm.authorId) ? ' <span class="badge blue" style="min-height:20px;padding:0 8px;font-size:11px">Professor</span>' : ''} <span class="xs faint">${fmtShort(cm.at)}</span></div><div class="cmt-t">${esc(cm.text)}</div></div></div>`;
 function commentsBlock(list, kind, id, role) {
-  return `<div class="cmts">${(list || []).map(cmtHtml).join('')}</div><form class="cmt-f" data-form="comment" data-kind="${kind}" data-id="${id}" data-role="${role}"><span class="av sm ${role === 'prof' ? '' : 'stu'}">${initials(person(meId(role)).name)}</span><input class="inp" name="text" placeholder="Escreve um comentário" required autocomplete="off" aria-label="Comentário"><button class="btn primary icon" aria-label="Publicar comentário">${ic('send')}</button></form>`;
+  return `<div class="cmts">${(list || []).map(cmtHtml).join('')}</div><form class="cmt-f" data-form="comment" data-kind="${kind}" data-id="${id}" data-role="${role}"><span class="av sm ${role === 'prof' ? '' : 'stu'}">${avIn(person(meId(role)).name)}</span><input class="inp" name="text" placeholder="Escreve um comentário" required autocomplete="off" aria-label="Comentário"><button class="btn primary icon" aria-label="Publicar comentário">${ic('send')}</button></form>`;
 }
 function mural(c, role) {
   const href = a => role === 'prof' ? `#prof-trabalho-${a.id}` : `#aluno-trabalho-${a.id}`;
@@ -2069,11 +2133,11 @@ function vChat(role, cid, sid) {
   const th = threads(role);
   const who = t => role === 'prof' ? person(t.sid).name : person(t.c.teacherId).name;
   const sub = t => role === 'prof' ? `${t.c.name} · ${t.c.subject}` : t.c.subject;
-  const item = t => { const on = cur && cur.c.id === t.c.id && cur.sid === t.sid; return `<a class="th ${on ? 'on' : ''}" href="#${base}-${t.c.id}${role === 'prof' ? '-' + t.sid : ''}"><span class="av sm">${initials(who(t))}</span><div class="grow" style="min-width:0"><div class="row between" style="gap:8px"><b class="th-n">${esc(who(t))}</b>${t.last ? `<span class="xs faint">${fmtShort(t.last.at)}</span>` : ''}</div><div class="xs muted">${esc(sub(t))}</div><div class="th-p">${t.last ? esc((t.last.from === me ? 'Tu: ' : '') + t.last.text) : '<span class="faint">Ainda sem mensagens</span>'}</div></div>${t.unread ? `<span class="nb">${t.unread}</span>` : ''}</a>`; };
+  const item = t => { const on = cur && cur.c.id === t.c.id && cur.sid === t.sid; return `<a class="th ${on ? 'on' : ''}" href="#${base}-${t.c.id}${role === 'prof' ? '-' + t.sid : ''}"><span class="av sm">${avIn(who(t))}</span><div class="grow" style="min-width:0"><div class="row between" style="gap:8px"><b class="th-n">${esc(who(t))}</b>${t.last ? `<span class="xs faint">${fmtShort(t.last.at)}</span>` : ''}</div><div class="xs muted">${esc(sub(t))}</div><div class="th-p">${t.last ? esc((t.last.from === me ? 'Tu: ' : '') + t.last.text) : '<span class="faint">Ainda sem mensagens</span>'}</div></div>${t.unread ? `<span class="nb">${t.unread}</span>` : ''}</a>`; };
   let pane = `<div class="empty" style="margin:auto">${ic('chat')}<p class="mt-s">Escolhe uma conversa.</p></div>`;
   if (cur) {
     const t = {c: cur.c, sid: cur.sid}, ms = S.msgs.filter(m => m.classId === cid && m.studentId === cur.sid);
-    pane = `<div class="chat-h"><a class="btn sm icon chat-back" href="#${base}" aria-label="Voltar às conversas">${ic('back')}</a><span class="av sm">${initials(who(t))}</span><div class="grow" style="min-width:0"><div class="bold">${esc(who(t))}</div><div class="xs muted">${esc(sub(t))}</div></div></div>
+    pane = `<div class="chat-h"><a class="btn sm icon chat-back" href="#${base}" aria-label="Voltar às conversas">${ic('back')}</a><span class="av sm">${avIn(who(t))}</span><div class="grow" style="min-width:0"><div class="bold">${esc(who(t))}</div><div class="xs muted">${esc(sub(t))}</div></div></div>
       <div class="msgs" id="msgs">${ms.length ? ms.map(m => `<div class="msg-b ${m.from === me ? 'mine' : 'theirs'}">${esc(m.text)}<time>${fmtShort(m.at)}</time></div>`).join('') : `<div class="empty" style="margin:auto">${role === 'aluno' ? 'Escreve a tua dúvida. Só tu e o professor veem esta conversa.' : 'Escreve a primeira mensagem.'}</div>`}</div>
       <form class="composer" data-form="msg" data-cid="${cid}" data-sid="${cur.sid}" data-from="${me}"><input class="inp" name="text" placeholder="Escreve uma mensagem" autocomplete="off" required aria-label="Mensagem"><button class="btn primary icon" aria-label="Enviar">${ic('send')}</button></form>`;
   }
@@ -2084,6 +2148,10 @@ function vChat(role, cid, sid) {
 }
 
 /* ---- Definições ---- */
+const acctCard = (n, r, extra = '') => `<div class="card pad-l sec"><h2 class="h2c">Conta</h2>
+  <div class="acct mt"><span class="av xl">${avIn(n)}</span><div class="grow" style="min-width:0"><div class="bold" style="font-size:18px">${esc(n)}</div><div class="small muted">${r}</div>
+    <div class="row wrap mt"><label class="btn sm">${ic('camera')}${S.photos?.[n] ? 'Mudar fotografia' : 'Adicionar fotografia'}<input type="file" hidden accept="image/*" data-photo="${esc(n)}"></label>${S.photos?.[n] ? `<button class="btn sm ghost" data-act="rmPhoto" data-n="${esc(n)}">Remover</button>` : ''}</div></div></div>
+  <div class="row wrap mt-l">${extra}<a class="btn" href="#entrar">${ic('logout')}Mudar de perfil</a></div></div>`;
 function vDefs(role) {
   const on = k => prefs.notif[k] !== false;
   const tg = (k, t, d) => `<label class="toggle"><div><div class="bold small">${t}</div>${d ? `<div class="hint">${d}</div>` : ''}</div><input type="checkbox" data-notif="${k}" ${on(k) ? 'checked' : ''}><span class="sw"></span></label>`;
@@ -2098,9 +2166,7 @@ function vDefs(role) {
         ${role === 'prof' ? tg('entrega', 'Trabalhos entregues', '') + tg('pedido', 'Pedidos para entrar nas turmas', '') : tg('aberto', 'Teste aberto pelo professor', '') + tg('nota', 'Nota nova', '') + tg('prazo', 'Prazo de trabalho no dia seguinte', '')}
       </div><p class="hint mt">Na versão final, os avisos chegam ao telemóvel.</p></div>
     </div>
-    <div class="card pad-l sec"><h2 class="h2c">Conta</h2>
-      <div class="row mt"><span class="av">${initials(me.n)}</span><div><div class="bold">${esc(me.n)}</div><div class="small muted">${me.r} · ${esc(S.school.name)}</div></div></div>
-      <div class="row wrap mt-l">${role === 'aluno' ? `<a class="btn" href="#aluno-turmas">${ic('users')}As minhas turmas</a>` : ''}<a class="btn" href="#entrar">${ic('logout')}Mudar de perfil</a></div></div>`;
+    ${acctCard(me.n, `${me.r} · ${esc(S.school.name)}`, role === 'aluno' ? `<a class="btn" href="#aluno-turmas">${ic('users')}As minhas turmas</a>` : '')}`;
   return shell(role, role + '-definicoes', content);
 }
 
@@ -2183,7 +2249,7 @@ function vAlunoNotas() {
 function vAlunoDisciplina(id) {
   const c = cls(id);
   if (!c || !c.students.includes(ME)) return shell('aluno', 'aluno-notas', `<div class="card empty">Disciplina não encontrada.</div>`);
-  const items = myItems().filter(x => x.classId === id), ps = items.map(x => x.p), m = avg(ps);
+  const items = myItems().filter(x => x.classId === id), ps = items.map(x => x.p), m = wmean(items);
   const best = ps.length ? Math.max(...ps) : null, worst = ps.length ? Math.min(...ps) : null;
   const rows = [];
   S.tests.filter(t => t.classId === id && t.status !== 'draft').forEach(t => { const s = mySub(t.id), st = tstate(t); let state, p = null, href = '';
@@ -2206,6 +2272,7 @@ function vAlunoDisciplina(id) {
       ${section('Nota de cada avaliação', items.length ? `<div class="pad">${hbars(items.map(x => ({label: x.title, sub: `${x.kind} · ${fmtDate(x.date)}`, p: x.p})))}</div>` : '<div class="empty">Ainda sem notas nesta disciplina.</div>')}
       ${section('Evolução', items.length > 1 ? `<div class="pad">${spark(ps, 360, 130)}<div class="hint mt-s">A linha cinzenta marca a positiva.</div></div>` : '<div class="empty">Aparece a partir da 2.ª nota.</div>')}
     </div>
+    ${items.length ? section('Como é calculada a média', `<div class="pad">${hbars(groupMeans(items).map(x => ({label: x.label, sub: `${x.w}% da média${x.p == null ? ' · ainda sem notas' : ''}`, p: x.p})))}<p class="hint mt-s">Critérios de avaliação da escola. Se ainda não houver nota numa parte, as outras contam na mesma proporção.</p></div>`) : ''}
     ${section('Tudo nesta disciplina', rows.length ? `<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Avaliação</th><th>Estado</th><th class="num">Nota</th></tr></thead><tbody>${rows.map(r => `<tr${r.href ? ` class="click" data-act="nav" data-h="${r.href}"` : ''}><td><div class="bold">${esc(r.title)}</div><div class="xs faint">${esc(r.kind)} · ${fmtDate(r.date)}</div></td><td>${r.state}</td><td class="num"><div class="gcell">${r.p == null ? '<span class="faint">-</span>' : mini(r.p) + gradeCell(r.p)}</div></td></tr>`).join('')}</tbody></table></div>` : '<div class="empty">O professor ainda não publicou nada.</div>')}`;
   return shell('aluno', 'aluno-notas', content);
 }
@@ -2411,6 +2478,7 @@ function zoom(src) { if (src) openModal(`<div class="row between"><h2>Figura</h2
 
 const ACT = {
   close: () => closeModal(),
+  rmPhoto: el => { if (S.photos) delete S.photos[el.dataset.n]; save(); render(); toast('Fotografia removida'); },
   ovClose: (el, e) => { if (e.target === el) closeModal(); },
   nav: el => go(el.dataset.h),
   reset: () => confirmBox('Repor os dados?', 'Turmas, testes e notas voltam ao estado inicial da demonstração.', 'doReset', `${ic('refresh')}Repor`, 'danger'),
@@ -2561,6 +2629,8 @@ document.addEventListener('change', e => {
     else { const [mid, sid] = el.dataset.mgrade.split(':'), m = S.manual.find(x => x.id === mid); if (p == null) delete m.grades[sid]; else m.grades[sid] = p; save(); const box = $('#mstats'); if (box) box.outerHTML = mStats(m); }
     toast('Nota guardada');
   }
+  if (el.dataset.weight) { S.school.weights = Object.assign(wts(), {[el.dataset.weight]: clamp(Math.round(+el.value || 0), 0, 100)}); save(); render(); toast('Critérios guardados'); }
+  if (el.dataset.photo && el.files[0]) { const n = el.dataset.photo; readImage(el.files[0], src => { const im = new Image(); im.onload = () => { const z = Math.min(im.width, im.height), cv = document.createElement('canvas'); cv.width = cv.height = 192; cv.getContext('2d').drawImage(im, (im.width - z) / 2, (im.height - z) / 2, z, z, 0, 0, 192, 192); S.photos = S.photos || {}; S.photos[n] = cv.toDataURL('image/jpeg', 0.85); save(); render(); toast('Fotografia atualizada'); }; im.src = src; }); }
   if (el.dataset.afile && el.files.length) { ADDMENU = SUBOPEN = null; addFiles(el.dataset.afile, [...el.files]); }
   if (el.dataset.pref === 'big') { prefs.big = el.checked; savePrefs(); }
   if (el.dataset.notif) { prefs.notif[el.dataset.notif] = el.checked; savePrefs(); toast('Guardado'); }
